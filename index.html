@@ -316,12 +316,13 @@ td.num, th.num{text-align:right; font-variant-numeric:tabular-nums}
 .pair{display:grid; grid-template-columns:1fr 28px 1fr; background:var(--surface); border:1px solid var(--line); border-radius:var(--r); overflow:hidden}
 .pair > div{padding:12px 14px; display:grid; gap:3px; align-content:start}
 .pair .d{background:var(--amber-soft)} .pair .t{background:var(--jade-soft)}
-.pair .arrow{display:grid; place-items:center; color:var(--muted); font-size:1.1rem; background:var(--surface)}
+.pair .arrow{display:grid; place-items:center; align-content:center; padding:0; color:var(--muted); font-size:1.1rem; background:var(--surface)}
 .pair .k{font-size:.7rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase}
 .pair .d .k{color:var(--amber)} .pair .t .k{color:var(--jade)}
 .pair b{font-size:.94rem; color:var(--ink)}
+.pair .act b{display:block}
 .pair span{font-size:.84rem; color:var(--ink-2)}
-.pair .act{grid-column:1 / -1; border-top:1px solid var(--line); font-size:.86rem; color:var(--ink); padding:9px 14px}
+.pair .act{display:block; grid-column:1 / -1; border-top:1px solid var(--line); font-size:.86rem; color:var(--ink); padding:9px 14px}
 .routine{display:grid; gap:14px}
 .rrow{display:grid; grid-template-columns:76px 1fr; gap:12px; align-items:center}
 .rrow .when{display:grid; justify-items:center; gap:2px; font-weight:600; font-size:.86rem; color:var(--ink)}
@@ -354,10 +355,10 @@ td.num, th.num{text-align:right; font-variant-numeric:tabular-nums}
 .form label{display:grid; gap:4px; font-size:.82rem; font-weight:600; color:var(--ink-2)}
 select{font:inherit; font-size:.95rem; padding:9px 10px; border-radius:8px; border:1px solid var(--line); background:var(--surface); color:var(--ink)}
 .plan{list-style:none; margin:0; padding:0; display:grid; gap:8px}
-.plan li{display:grid; grid-template-columns:62px 1fr; gap:12px; padding:10px 12px; background:var(--surface-2); border-radius:8px}
+.plan > li{display:grid; grid-template-columns:62px 1fr; gap:12px; padding:10px 12px; background:var(--surface-2); border-radius:8px}
 .plan .min{font-family:var(--f-mono); font-size:.86rem; color:var(--jade); font-weight:500}
 .plan b{color:var(--ink)}
-.plan ul{margin:4px 0 0; padding-left:1.1em; font-size:.9rem; color:var(--ink-2)}
+.plan ul{margin:4px 0 0; padding-left:1.1em; list-style:disc; font-size:.9rem; color:var(--ink-2)}
 .plan p{font-size:.9rem; color:var(--ink-2)}
 .prog{height:8px; border-radius:99px; background:var(--surface-2); overflow:hidden}
 .prog i{display:block; height:100%; background:var(--jade); border-radius:99px; transition:width .2s}
