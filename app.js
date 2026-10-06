@@ -529,6 +529,15 @@ function numberCites(){
 }
 renderTL(); renderCmp(); setLayer('muscles'); numberCites();
 
+/* ---------- giao diện sáng/tối: mặc định theo hệ thống, bấm nút để chọn tay (đã lưu thì <head> áp trước khi vẽ) ---------- */
+const root = document.documentElement, sysDark = matchMedia('(prefers-color-scheme: dark)'), themeBtn = $('#theme-btn');
+const isDark = () => root.dataset.theme ? root.dataset.theme === 'dark' : sysDark.matches;
+const paintTheme = () => { const t = isDark() ? 'Chuyển sang nền sáng' : 'Chuyển sang nền tối'; themeBtn.title = t; themeBtn.setAttribute('aria-label', t); };
+themeBtn.addEventListener('click', () => { const next = isDark() ? 'light' : 'dark'; root.dataset.theme = next; store.set('fy-theme', next); });
+sysDark.addEventListener('change', paintTheme);
+new MutationObserver(paintTheme).observe(root, { attributes:true, attributeFilter:['data-theme'] });
+paintTheme();
+
 /* ---------- mục lục theo vị trí cuộn ---------- */
 const links = $$('#toc a'), secs = links.map(a => $(a.getAttribute('href')));
 const io = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting){ const i = secs.indexOf(en.target); links.forEach((a, j) => a.classList.toggle('on', j === i)); const nav = $('#toc'), a = links[i]; nav.scrollTo({ left: a.offsetLeft - nav.clientWidth / 2 + a.offsetWidth / 2, behavior: 'smooth' }); } }), { rootMargin:'-45% 0px -50% 0px' });
