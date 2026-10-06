@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Tài liệu tương tác cho giáo viên yoga phục hồi: nguồn gốc, thị trường thế giới và Việt Nam, bản đồ cơ, bạch huyết, huyệt, Đông–Tây y, Diện chẩn và bộ công cụ dạy face yoga.">
+<meta name="description" content="Tài liệu tương tác cho giáo viên yoga phục hồi: nguồn gốc, thị trường, bản đồ khuôn mặt 5 lớp (cơ, bạch huyết, huyệt, Linh Khu, Diện chẩn), Đông–Tây y và bộ công cụ dạy face yoga.">
 <meta name="theme-color" content="#21705E">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Bản đồ Face Yoga">
-<meta property="og:description" content="Tài liệu tương tác cho giáo viên yoga phục hồi: nguồn gốc, thị trường thế giới và Việt Nam, bản đồ cơ, bạch huyết, huyệt, Đông–Tây y, Diện chẩn và bộ công cụ dạy face yoga.">
+<meta property="og:description" content="Tài liệu tương tác cho giáo viên yoga phục hồi: nguồn gốc, thị trường, bản đồ khuôn mặt 5 lớp (cơ, bạch huyết, huyệt, Linh Khu, Diện chẩn), Đông–Tây y và bộ công cụ dạy face yoga.">
 <meta property="og:url" content="https://tuanbt.github.io/ban-do-face-yoga/">
 <meta property="og:image" content="https://tuanbt.github.io/ban-do-face-yoga/img/og.jpg">
 <meta property="og:image:width" content="1200">
@@ -20,31 +20,38 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
-/* Layout: một cột đọc dài, thanh mục lục dính trên cùng; Phần 5 là bản đồ khuôn mặt hai cột (hình | bảng chi tiết). */
+/* Layout: đọc dọc theo chương; mỗi chương mở bằng một hình hoặc sơ đồ, chi tiết gói trong “Xem thêm”.
+   Bản đồ khuôn mặt: chân dung minh hoạ + lớp SVG (cơ, hạch, huyệt, vùng) vẽ theo toạ độ ảnh. */
 :root{
-  --bg:#F3F6F4; --surface:#FFFFFF; --surface-2:#E8EFEB; --skin:#FFFDFB;
-  --ink:#14211E; --ink-2:#3F4F4A; --muted:#66756F; --line:#D2DCD7;
+  --bg:#F3F6F4; --surface:#FFFFFF; --surface-2:#E8EFEB; --paper:#F5F0E9;
+  --ink:#14211E; --ink-2:#3F4F4A; --muted:#5F6E68; --line:#D2DCD7;
   --jade:#21705E; --jade-soft:#D4EAE1;
-  --rose:#B0516A; --rose-soft:#F6DEE4;
-  --amber:#9C6410; --amber-soft:#F5E6CB;
+  --rose:#9E4259; --rose-soft:#F6DEE4;
+  --amber:#8A570B; --amber-soft:#F5E6CB;
   --indigo:#3D58A6; --indigo-soft:#DEE4F6;
-  --good:#2C7A47; --warn:#9A6A0B; --bad:#B23838;
+  --plum:#7A4A9C; --plum-soft:#EBDDF3;
+  --good:#2C7A47; --warn:#8F620A; --bad:#B23838;
+  /* màu lớp phủ trên chân dung: cố định vì ảnh nền luôn sáng */
+  --ov-relax:#C2456A; --ov-tone:#1D8A70; --ov-balance:#C88612; --ov-lymph:#1F7A9E;
+  --ov-point:#D0700E; --ov-zone:#4A5DB5; --ov-dc:#8A4FB0; --ov-anat:#B4473E; --ov-ink:#14211E;
   --f-display:"Fraunces", Georgia, "Times New Roman", serif;
   --f-body:"Be Vietnam Pro", "Segoe UI", system-ui, -apple-system, sans-serif;
   --f-mono:"IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
-  --r:10px;
+  --r:12px;
 }
 @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
-  --bg:#0E1513; --surface:#151F1C; --surface-2:#1C2925; --skin:#18221F;
-  --ink:#E3ECE8; --ink-2:#B4C3BD; --muted:#889892; --line:#2B3934;
+  --bg:#0E1513; --surface:#151F1C; --surface-2:#1C2925; --paper:#F2EDE6;
+  --ink:#E3ECE8; --ink-2:#B4C3BD; --muted:#8C9C96; --line:#2B3934;
   --jade:#5CC3A6; --jade-soft:#163A31; --rose:#EA8FA5; --rose-soft:#3B1F28;
   --amber:#E3AA4E; --amber-soft:#3A2B12; --indigo:#97ABF0; --indigo-soft:#1F2744;
+  --plum:#C9A2E8; --plum-soft:#2E2240;
   --good:#5FBF80; --warn:#E2B24C; --bad:#EF7B7B; color-scheme:dark }}
 :root[data-theme="dark"]{
-  --bg:#0E1513; --surface:#151F1C; --surface-2:#1C2925; --skin:#18221F;
-  --ink:#E3ECE8; --ink-2:#B4C3BD; --muted:#889892; --line:#2B3934;
+  --bg:#0E1513; --surface:#151F1C; --surface-2:#1C2925; --paper:#F2EDE6;
+  --ink:#E3ECE8; --ink-2:#B4C3BD; --muted:#8C9C96; --line:#2B3934;
   --jade:#5CC3A6; --jade-soft:#163A31; --rose:#EA8FA5; --rose-soft:#3B1F28;
   --amber:#E3AA4E; --amber-soft:#3A2B12; --indigo:#97ABF0; --indigo-soft:#1F2744;
+  --plum:#C9A2E8; --plum-soft:#2E2240;
   --good:#5FBF80; --warn:#E2B24C; --bad:#EF7B7B; color-scheme:dark }
 
 *{box-sizing:border-box}
@@ -53,17 +60,19 @@ html{scroll-behavior:smooth; scroll-padding-top:72px}
 @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} *{animation:none!important; transition:none!important} }
 body{background:var(--bg); color:var(--ink); font-family:var(--f-body); font-size:16px; line-height:1.65; -webkit-font-smoothing:antialiased}
 a{color:var(--jade)}
+img{max-width:100%}
 :focus-visible{outline:2px solid var(--jade); outline-offset:2px; border-radius:4px}
 h1,h2,h3,h4{font-family:var(--f-display); font-weight:600; line-height:1.18; text-wrap:balance; margin:0; color:var(--ink)}
 h2{font-size:clamp(1.7rem, 1.2rem + 2vw, 2.5rem); letter-spacing:-.01em}
-h3{font-size:1.25rem}
-h4{font-size:1.02rem; font-family:var(--f-body); font-weight:600}
+h3{font-size:1.2rem}
+h4{font-size:1rem; font-family:var(--f-body); font-weight:600}
 p{margin:0}
 .mono{font-family:var(--f-mono); font-size:.86em}
 .muted{color:var(--muted)}
+.small{font-size:.86rem}
 .eyebrow{font-size:.74rem; font-weight:600; letter-spacing:.09em; text-transform:uppercase; color:var(--jade)}
 
-/* ---- thanh mục lục ---- */
+/* ---- mục lục dính ---- */
 .toc{position:sticky; top:env(safe-area-inset-top,0px); z-index:20; background:color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter:blur(10px); border-bottom:1px solid var(--line)}
 .toc nav{max-width:1180px; margin:0 auto; padding:10px 16px; display:flex; gap:6px; overflow-x:auto; scrollbar-width:none}
 .toc nav::-webkit-scrollbar{display:none}
@@ -73,26 +82,39 @@ p{margin:0}
 
 .wrap{max-width:1180px; margin:0 auto; padding-inline:16px; padding-block:0 64px}
 @media (min-width:720px){ .wrap{padding-inline:28px} }
-.chapter{padding-block:64px 8px; border-top:1px solid var(--line); display:grid; gap:28px}
+.chapter{padding-block:72px 8px; border-top:1px solid var(--line); display:grid; gap:28px}
 .chapter-head{display:grid; gap:10px; max-width:820px}
-.chapter-head .lede{font-size:1.08rem; color:var(--ink-2); max-width:68ch}
-.prose{max-width:68ch; display:grid; gap:14px; color:var(--ink-2)}
-.prose strong{color:var(--ink)}
+.chapter-head .lede{font-size:1.06rem; color:var(--ink-2); max-width:66ch}
 
 .grid{display:grid; gap:16px}
 .g2{grid-template-columns:repeat(auto-fit, minmax(min(100%, 340px), 1fr))}
 .g3{grid-template-columns:repeat(auto-fit, minmax(min(100%, 260px), 1fr))}
-.g4{grid-template-columns:repeat(auto-fit, minmax(min(100%, 210px), 1fr))}
+.g4{grid-template-columns:repeat(auto-fit, minmax(min(100%, 220px), 1fr))}
 .card{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:18px 18px 20px; display:grid; gap:10px; align-content:start; min-width:0}
 .card p{color:var(--ink-2); font-size:.95rem}
 .card ul{margin:0; padding-left:1.1em; color:var(--ink-2); font-size:.95rem; display:grid; gap:4px}
 .panel{background:var(--surface-2); border-radius:var(--r); padding:20px; display:grid; gap:12px}
 .chips{display:flex; flex-wrap:wrap; gap:6px}
 .chip{font:inherit; font-size:.82rem; padding:6px 12px; border-radius:999px; border:1px solid var(--line); background:var(--surface); color:var(--ink-2); cursor:pointer}
-.chip[aria-pressed="true"]{background:var(--ink); color:var(--bg); border-color:var(--ink)}
-.tag{display:inline-flex; align-items:center; gap:4px; font-size:.72rem; font-weight:600; letter-spacing:.03em; padding:2px 8px; border-radius:999px; background:var(--surface-2); color:var(--ink-2); white-space:nowrap}
+.chip[aria-pressed="true"], .chip.sel{background:var(--ink); color:var(--bg); border-color:var(--ink)}
+.tag{display:inline-flex; align-items:center; gap:4px; font-size:.72rem; font-weight:600; letter-spacing:.03em; padding:2px 8px; border-radius:999px; background:var(--surface-2); color:var(--ink-2); white-space:nowrap; justify-self:start}
 
-/* mức bằng chứng: hình dạng + chữ, không chỉ màu */
+/* thẻ có ảnh */
+.icard{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); overflow:hidden; display:grid; grid-template-rows:auto 1fr; min-width:0}
+.icard > img{width:100%; aspect-ratio:4/3; object-fit:cover; display:block; background:var(--paper)}
+.icard.sq > img{aspect-ratio:1/1}
+.icard .body{padding:14px 16px 16px; display:grid; gap:7px; align-content:start}
+.icard .body p{color:var(--ink-2); font-size:.92rem}
+.icard h3{font-size:1.08rem}
+
+/* đoạn mở chương có ảnh */
+.lead{display:grid; gap:20px; align-items:center}
+@media (min-width:880px){ .lead{grid-template-columns:1fr 1fr} }
+.lead figure{margin:0; min-width:0}
+.lead figure img{width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:16px; display:block; background:var(--paper)}
+.lead figcaption{font-size:.76rem; color:var(--muted); margin-top:6px}
+
+/* mức bằng chứng: hình dạng + chữ */
 .ev{display:inline-flex; align-items:center; gap:6px; font-size:.72rem; font-weight:600; padding:2px 9px 2px 7px; border-radius:999px; white-space:nowrap}
 .ev::before{content:""; width:8px; height:8px; border-radius:2px; background:currentColor}
 .ev-strong{background:var(--jade-soft); color:var(--jade)}
@@ -106,117 +128,157 @@ p{margin:0}
 sup.c{font-size:.68em; line-height:0; margin-left:1px}
 sup.c a{text-decoration:none; font-family:var(--f-mono); color:var(--jade); padding:0 1px}
 sup.c a:hover{text-decoration:underline}
-blockquote{margin:0; padding:14px 18px; border-left:3px solid var(--amber); background:var(--amber-soft); border-radius:0 var(--r) var(--r) 0; color:var(--ink)}
-blockquote .han{font-family:"Noto Serif TC","Songti TC","PMingLiU",serif; font-size:1.05rem; display:block; margin-bottom:4px; color:var(--ink)}
+blockquote{margin:0; padding:12px 16px; border-left:3px solid var(--amber); background:var(--amber-soft); border-radius:0 var(--r) var(--r) 0; color:var(--ink)}
+blockquote .han{font-family:"Noto Serif TC","Songti TC","PMingLiU",serif; font-size:1.05rem; display:block; margin-bottom:4px}
 blockquote cite{display:block; font-style:normal; font-size:.82rem; color:var(--muted); margin-top:6px}
 
+details.more{border:1px solid var(--line); border-radius:var(--r); background:var(--surface); padding:0}
+details.more > summary{cursor:pointer; list-style:none; padding:12px 16px; font-weight:600; font-size:.92rem; color:var(--ink); display:flex; align-items:center; gap:10px}
+details.more > summary::-webkit-details-marker{display:none}
+details.more > summary::before{content:"+"; font-family:var(--f-mono); width:22px; height:22px; border-radius:50%; display:grid; place-items:center; background:var(--surface-2); color:var(--jade); flex:none}
+details.more[open] > summary::before{content:"−"}
+details.more > .in{padding:0 16px 16px; display:grid; gap:12px}
+
+svg.ico{width:22px; height:22px; flex:none; stroke:currentColor; fill:none; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round}
+.iconrow{display:grid; gap:12px; grid-template-columns:repeat(auto-fit, minmax(min(100%, 210px), 1fr))}
+.iconrow > div{display:grid; grid-template-columns:40px 1fr; gap:10px; align-items:start}
+.iconrow .ib{width:40px; height:40px; border-radius:12px; background:var(--jade-soft); color:var(--jade); display:grid; place-items:center}
+.iconrow h4{font-size:.95rem}
+.iconrow p{font-size:.88rem; color:var(--ink-2)}
+
 /* ---- mở đầu ---- */
-.hero{padding-block:48px 56px; display:grid; gap:32px; align-items:center}
+.hero{padding-block:44px 40px; display:grid; gap:32px; align-items:center}
 @media (min-width:960px){ .hero{grid-template-columns:1.05fr .95fr} }
 .hero h1{font-size:clamp(2.6rem, 1.6rem + 4.4vw, 4.6rem); font-weight:600; letter-spacing:-.02em; line-height:1.02}
 .hero h1 em{font-style:italic; font-weight:400; color:var(--jade)}
-.hero .lede{font-size:1.12rem; color:var(--ink-2); max-width:56ch}
+.hero .lede{font-size:1.1rem; color:var(--ink-2); max-width:54ch}
 .hero-text{display:grid; gap:18px; min-width:0}
 .hero figure{margin:0; display:grid; gap:6px; min-width:0}
-.hero figure img{width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:14px; background:var(--surface-2)}
+.hero figure img{width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:16px; background:var(--paper)}
 .hero figcaption{font-size:.76rem; color:var(--muted)}
 .tldr{display:grid; gap:10px; margin:0; padding:0; list-style:none; counter-reset:t}
-.tldr li{display:grid; grid-template-columns:28px 1fr; gap:8px; color:var(--ink-2); font-size:.97rem}
+.tldr li{display:grid; grid-template-columns:28px 1fr; gap:8px; color:var(--ink-2); font-size:.96rem}
 .tldr li::before{counter-increment:t; content:counter(t); font-family:var(--f-mono); font-size:.78rem; color:var(--jade); border:1px solid var(--jade); border-radius:50%; width:24px; height:24px; display:grid; place-items:center; margin-top:1px}
 .tldr strong{color:var(--ink)}
+.vtoc{display:grid; gap:12px; grid-template-columns:repeat(auto-fill, minmax(min(100%, 170px), 1fr)); padding-bottom:56px}
+.vtoc a{display:grid; grid-template-rows:auto auto; text-decoration:none; color:var(--ink); background:var(--surface); border:1px solid var(--line); border-radius:var(--r); overflow:hidden}
+.vtoc a:hover{border-color:var(--jade)}
+.vtoc img{width:100%; aspect-ratio:4/3; object-fit:cover; display:block; background:var(--paper)}
+.vtoc span{padding:8px 10px 10px; font-size:.86rem; font-weight:600; line-height:1.3}
+.vtoc span b{display:block; font-family:var(--f-mono); font-weight:500; font-size:.72rem; color:var(--jade)}
 
 /* ---- dòng thời gian ---- */
-.tl{list-style:none; margin:0; padding:0; display:grid; gap:0; border-left:2px solid var(--line); margin-left:6px}
-.tl li{position:relative; padding:0 0 22px 24px; display:grid; gap:4px}
-.tl li::before{content:""; position:absolute; left:-8px; top:6px; width:14px; height:14px; border-radius:50%; background:var(--surface); border:2px solid var(--tc, var(--jade))}
-.tl .yr{font-family:var(--f-mono); font-size:.8rem; color:var(--muted)}
-.tl h4{font-size:1.02rem}
-.tl p{color:var(--ink-2); font-size:.95rem; max-width:70ch}
+.tl{list-style:none; margin:0; padding:0; border-left:2px solid var(--line); margin-left:6px}
+.tl li{position:relative; padding:0 0 20px 24px; display:grid; gap:3px}
+.tl li::before{content:""; position:absolute; left:-8px; top:6px; width:14px; height:14px; border-radius:50%; background:var(--surface); border:3px solid var(--tc, var(--jade))}
+.tl .yr{font-family:var(--f-mono); font-size:.78rem; color:var(--muted)}
+.tl p{color:var(--ink-2); font-size:.93rem; max-width:72ch}
 
 /* ---- số liệu ---- */
-.tile{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:16px 18px; display:grid; gap:6px; align-content:start; min-width:0}
-.tile .num{font-family:var(--f-display); font-size:2rem; font-weight:600; line-height:1.05; font-variant-numeric:tabular-nums; color:var(--ink)}
-.tile .lab{font-size:.9rem; color:var(--ink-2)}
+.tile{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:14px 16px; display:grid; gap:5px; align-content:start; min-width:0}
+.tile .num{font-family:var(--f-display); font-size:1.8rem; font-weight:600; line-height:1.05; font-variant-numeric:tabular-nums; color:var(--ink)}
+.tile .lab{font-size:.88rem; color:var(--ink-2)}
 .tile .rel{font-size:.72rem; color:var(--muted)}
 .rel b{font-weight:600}
 .rel-hi b{color:var(--good)} .rel-md b{color:var(--warn)} .rel-lo b{color:var(--bad)}
-.chart-box{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:18px; display:grid; gap:10px; min-width:0; position:relative}
-.chart-box svg{width:100%; height:auto; display:block; overflow:visible}
+.viz{position:relative}
+.viz svg:not(.ico){width:100%; height:auto; display:block; overflow:visible}
 .ax{font-family:var(--f-mono); font-size:11px; fill:var(--muted)}
 .gridl{stroke:var(--line); stroke-width:1}
+.vt{font-family:var(--f-body); fill:var(--ink)}
+.vt2{font-family:var(--f-body); fill:var(--ink-2)}
 .tip{position:absolute; pointer-events:none; background:var(--ink); color:var(--bg); font-size:.8rem; padding:6px 10px; border-radius:6px; white-space:nowrap; transform:translate(-50%, -120%)}
-details{border-top:1px solid var(--line); padding-top:8px}
-summary{cursor:pointer; font-size:.86rem; color:var(--ink-2)}
 .tbl-wrap{overflow-x:auto; min-width:0}
-table{border-collapse:collapse; width:100%; font-size:.92rem}
-th,td{text-align:left; vertical-align:top; padding:10px 12px; border-bottom:1px solid var(--line)}
-th{font-size:.76rem; letter-spacing:.05em; text-transform:uppercase; color:var(--muted); font-weight:600}
+table{border-collapse:collapse; width:100%; font-size:.9rem}
+th,td{text-align:left; vertical-align:top; padding:9px 11px; border-bottom:1px solid var(--line)}
+th{font-size:.74rem; letter-spacing:.05em; text-transform:uppercase; color:var(--muted); font-weight:600}
 td{color:var(--ink-2)}
 td.num, th.num{text-align:right; font-variant-numeric:tabular-nums}
 
-/* ---- bản đồ khuôn mặt ---- */
+/* ---- các bước Việt Nam ---- */
+.stages{display:grid; gap:12px; grid-template-columns:repeat(auto-fit, minmax(min(100%, 210px), 1fr)); counter-reset:st}
+.stage{position:relative; background:var(--surface-2); border-radius:var(--r); padding:14px; display:grid; gap:6px; align-content:start}
+.stage .ib{width:38px; height:38px; border-radius:50%; background:var(--surface); color:var(--jade); display:grid; place-items:center}
+.stage h4{font-size:.95rem}
+.stage p{font-size:.86rem; color:var(--ink-2)}
+.stage.gap{background:transparent; border:2px dashed var(--jade)}
+
+/* ---- chân dung tương tác ---- */
 .explorer{display:grid; gap:20px; align-items:start}
-@media (min-width:920px){ .explorer{grid-template-columns:minmax(0, 440px) minmax(0, 1fr)} }
-.seg{display:inline-flex; flex-wrap:wrap; gap:4px; padding:4px; background:var(--surface-2); border-radius:12px}
-.seg button{font:inherit; font-size:.86rem; border:0; background:transparent; color:var(--ink-2); padding:7px 12px; border-radius:8px; cursor:pointer}
+.explorer > .tabs-row{order:-2} .explorer > .legend{order:-1}
+@media (min-width:920px){
+  .explorer{grid-template-columns:minmax(0, 460px) minmax(0, 1fr); grid-template-areas:"face tabs" "face legend" "face detail" "face list"}
+  .explorer > .face-box{grid-area:face; position:sticky; top:72px}
+  .explorer > .tabs-row{grid-area:tabs} .explorer > .legend{grid-area:legend} .explorer > .detail{grid-area:detail} .explorer > .itemlist{grid-area:list}
+}
+.face-box{background:var(--paper); border:1px solid var(--line); border-radius:16px; padding:6px; min-width:0}
+.pf{width:100%; height:auto; display:block}
+.explorer .pf{max-height:74vh}
+.tabs-row{display:grid; gap:10px}
+.seg{display:inline-flex; flex-wrap:wrap; gap:4px; padding:4px; background:var(--surface-2); border-radius:12px; justify-self:start}
+.seg button{font:inherit; font-size:.85rem; border:0; background:transparent; color:var(--ink-2); padding:7px 11px; border-radius:8px; cursor:pointer}
 .seg button[aria-selected="true"]{background:var(--surface); color:var(--ink); box-shadow:0 1px 2px rgb(0 0 0 / .08); font-weight:600}
-.face-box{background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:12px}
-.face-box svg{width:100%; height:auto; display:block; max-height:62vh}
-@media (min-width:920px){ .explorer .face-box{position:sticky; top:72px} .face-box svg{max-height:76vh} }
-.face .skin{fill:var(--skin); stroke:var(--ink-2); stroke-width:1.6}
-.face .ln{fill:none; stroke:var(--ink-2); stroke-width:1.4; stroke-linecap:round; stroke-linejoin:round}
-.face .ln.soft{stroke:var(--muted); stroke-width:1; stroke-dasharray:3 4}
-.face .iris{fill:var(--ink-2)}
-.face .m{fill-opacity:.26; stroke-opacity:.7; stroke-width:1; cursor:pointer; transition:fill-opacity .15s}
-.face .m.relax{fill:var(--rose); stroke:var(--rose)}
-.face .m.tone{fill:var(--jade); stroke:var(--jade)}
-.face .m.balance{fill:var(--amber); stroke:var(--amber)}
-.face .m:hover{fill-opacity:.45}
-.face .m.on{fill-opacity:.7; stroke-width:2}
-.face .node{fill:var(--jade); stroke:var(--skin); stroke-width:2; cursor:pointer}
-.face .node.on{fill:var(--rose); r:9}
-.face .flow{fill:none; stroke:var(--jade); stroke-width:1.6; stroke-dasharray:4 5; opacity:.75; animation:flow 1.6s linear infinite}
-@keyframes flow{to{stroke-dashoffset:-18}}
-.face .pt{fill:var(--amber); stroke:var(--skin); stroke-width:2; cursor:pointer}
-.face .pt.on{fill:var(--rose)}
-.face .zn{fill:var(--indigo); fill-opacity:.85; stroke:var(--skin); stroke-width:2; cursor:pointer}
-.face .zn.on{fill:var(--rose); fill-opacity:1}
-.face .hit{fill:transparent; cursor:pointer}
-.face .halo{fill:none; stroke:var(--rose); stroke-width:2; opacity:0}
-.face .halo.on{opacity:1}
-.side{display:grid; gap:16px; min-width:0}
-.detail{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:20px; display:grid; gap:12px; min-height:220px}
-.detail dl{margin:0; display:grid; gap:10px}
-.detail dt{font-size:.74rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:var(--muted)}
-.detail dd{margin:2px 0 0; color:var(--ink-2)}
-.legend{display:flex; flex-wrap:wrap; gap:12px; font-size:.84rem; color:var(--ink-2)}
+.seg.small button{font-size:.8rem; padding:5px 10px}
+.legend{display:flex; flex-wrap:wrap; gap:12px; font-size:.84rem; color:var(--ink-2); align-items:center}
 .legend span{display:inline-flex; align-items:center; gap:6px}
 .sw{width:12px; height:12px; border-radius:3px; display:inline-block}
+.detail{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:18px; display:grid; gap:10px; min-height:200px}
+.detail dl{margin:0; display:grid; gap:9px}
+.detail dt{font-size:.72rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:var(--muted)}
+.detail dd{margin:2px 0 0; color:var(--ink-2); font-size:.95rem}
 .itemlist{display:grid; gap:12px}
-.itemlist h4{font-size:.78rem; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); font-weight:600}
+.itemlist h4{font-size:.74rem; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); font-weight:600}
 .itemlist .chips{gap:5px}
 .itemlist .chip{font-size:.8rem; padding:5px 10px}
-.itemlist .chip.sel{background:var(--ink); color:var(--bg); border-color:var(--ink)}
+/* lớp phủ */
+.pf .m{cursor:pointer}
+.pf .m .mf{fill-opacity:.34; stroke-width:1.2; stroke-opacity:.8; transition:fill-opacity .15s}
+.pf .m .fib{fill:none; stroke-width:1.3; stroke-opacity:.6; stroke-linecap:round; pointer-events:none}
+.pf .m.relax .mf{fill:var(--ov-relax); stroke:var(--ov-relax)} .pf .m.relax .fib{stroke:#8F2343}
+.pf .m.tone .mf{fill:var(--ov-tone); stroke:var(--ov-tone)} .pf .m.tone .fib{stroke:#0E5C49}
+.pf .m.balance .mf{fill:var(--ov-balance); stroke:var(--ov-balance)} .pf .m.balance .fib{stroke:#8A5A06}
+.pf.anat .m .mf{fill:var(--ov-anat); stroke:var(--ov-anat)} .pf.anat .m .fib{stroke:#7A241E}
+.pf .m:hover .mf{fill-opacity:.52}
+.pf .m.on .mf{fill-opacity:.7; stroke-width:2.5}
+.pf .m.on .fib{stroke:#fff; stroke-opacity:.75}
+.pf.has-sel .m:not(.on) .mf{fill-opacity:.13} .pf.has-sel .m:not(.on) .fib{stroke-opacity:.22}
+.pf.has-sel .dot:not(.on), .pf.has-sel .dca:not(.on), .pf.has-sel .dcl:not(.on){opacity:.45}
+.pf .flow{fill:none; stroke:var(--ov-lymph); stroke-width:2.6; stroke-dasharray:6 7; opacity:.8; animation:flow 1.6s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-26}}
+.pf .dot{stroke:#fff; stroke-width:3; cursor:pointer}
+.pf .dot.node{fill:var(--ov-lymph)} .pf .dot.pt{fill:var(--ov-point)} .pf .dot.zn{fill:var(--ov-zone)} .pf .dot.dcp{fill:var(--ov-dc)}
+.pf .hit{fill:transparent; cursor:pointer}
+.pf .halo{fill:none; stroke:var(--ov-ink); stroke-width:2.5; opacity:0}
+.pf .halo.on{opacity:.85}
+.pf .dot.on{stroke:var(--ov-ink)}
+.pf .dca{fill:var(--ov-dc); fill-opacity:.3; stroke:var(--ov-dc); stroke-width:1.6; cursor:pointer}
+.pf .dcl{fill:none; stroke:var(--ov-dc); stroke-width:8; stroke-opacity:.55; stroke-linecap:round; cursor:pointer}
+.pf .dca.on{fill-opacity:.62} .pf .dcl.on{stroke-opacity:.95}
+.pf .co rect{fill:#fff; stroke:var(--ov-ink); stroke-width:1.2; rx:8}
+.pf .co text{font-family:var(--f-body); font-size:21px; font-weight:600; fill:var(--ov-ink)}
+.pf .co line{stroke:var(--ov-ink); stroke-width:1.6}
+.pf .lab{font-family:var(--f-body); font-size:18px; font-weight:600; paint-order:stroke; stroke:#fff; stroke-width:5px; stroke-linejoin:round}
+.pf .lab.dark{fill:var(--ov-ink)}
 
 /* bài tập */
-.ex{display:grid; grid-template-rows:auto 1fr; overflow:hidden; padding:0}
-.ex img{width:100%; aspect-ratio:1/1; object-fit:cover; background:var(--surface-2); display:block}
-.ex .body{padding:16px 18px 18px; display:grid; gap:8px; align-content:start}
-.ex ol{margin:0; padding-left:1.2em; color:var(--ink-2); font-size:.92rem; display:grid; gap:3px}
+.ex ol{margin:0; padding-left:1.2em; color:var(--ink-2); font-size:.9rem; display:grid; gap:3px}
 
-/* stepper bạch huyết */
+/* dẫn lưu */
 .mld{display:grid; gap:20px; align-items:start}
-@media (min-width:860px){ .mld{grid-template-columns:minmax(0, 360px) minmax(0, 1fr)} }
-.steps{list-style:none; margin:0; padding:0; display:grid; gap:6px; counter-reset:s}
-.steps button{all:unset; box-sizing:border-box; width:100%; cursor:pointer; display:grid; grid-template-columns:30px 1fr; gap:10px; align-items:start; padding:10px 12px; border-radius:var(--r); border:1px solid var(--line); background:var(--surface)}
+@media (min-width:880px){ .mld{grid-template-columns:minmax(0, 1.05fr) minmax(0, .95fr)} }
+.mld-fig{display:grid; grid-template-columns:1.25fr 1fr; gap:10px; align-items:stretch}
+.mld-fig img{width:100%; height:100%; aspect-ratio:1/1; object-fit:cover; border-radius:14px; background:var(--paper); display:block}
+.mld-fig .face-box{display:grid; align-items:center}
+.mld-cap{display:grid; gap:6px; padding-top:10px}
+.mld-cap h3{font-size:1.15rem}
+.steps{list-style:none; margin:0; padding:0; display:grid; gap:6px}
+.steps button{all:unset; box-sizing:border-box; width:100%; cursor:pointer; display:grid; grid-template-columns:30px 1fr; gap:10px; align-items:center; padding:9px 12px; border-radius:var(--r); border:1px solid var(--line); background:var(--surface)}
 .steps button:focus-visible{outline:2px solid var(--jade)}
 .steps .n{font-family:var(--f-mono); font-size:.8rem; width:26px; height:26px; border-radius:50%; display:grid; place-items:center; border:1px solid var(--jade); color:var(--jade)}
 .steps button[aria-current="step"]{border-color:var(--jade); background:var(--jade-soft)}
 .steps button[aria-current="step"] .n{background:var(--jade); color:var(--surface)}
-.steps .tt{font-weight:600; color:var(--ink)}
-.steps .dd{font-size:.9rem; color:var(--ink-2); display:none}
-.steps button[aria-current="step"] .dd{display:block}
-.btnrow{display:flex; gap:8px; flex-wrap:wrap}
+.steps .tt{font-weight:600; color:var(--ink); font-size:.94rem}
+.btnrow{display:flex; gap:8px; flex-wrap:wrap; align-items:center}
 .btn{font:inherit; font-size:.9rem; font-weight:600; padding:9px 16px; border-radius:8px; border:1px solid var(--ink); background:var(--ink); color:var(--bg); cursor:pointer}
 .btn.ghost{background:transparent; color:var(--ink)}
 .btn:disabled{opacity:.4; cursor:default}
@@ -224,34 +286,51 @@ td.num, th.num{text-align:right; font-variant-numeric:tabular-nums}
 .play .ic{width:22px; height:22px; border-radius:50%; background:var(--jade); color:var(--surface); display:grid; place-items:center; font-size:.7rem}
 .play[aria-pressed="true"]{background:var(--jade); color:var(--surface)}
 .play[aria-pressed="true"] .ic{background:var(--surface); color:var(--jade)}
-.play[hidden]{display:none}
-.auto{display:inline-flex; gap:8px; align-items:center; font-size:.88rem; color:var(--ink-2); cursor:pointer}
+.auto{display:inline-flex; gap:8px; align-items:center; font-size:.86rem; color:var(--ink-2); cursor:pointer}
 .auto input{accent-color:var(--jade)}
 
-/* tabs */
-.tabs{display:grid; gap:18px}
+/* lăng kính */
 .tabpanel{display:grid; gap:16px}
+.diagram{display:grid; gap:18px; align-items:start}
+@media (min-width:880px){ .diagram{grid-template-columns:minmax(0, 420px) minmax(0, 1fr)} }
 .why{display:grid; gap:16px; grid-template-columns:repeat(auto-fit, minmax(min(100%, 300px), 1fr))}
-.why .col{display:grid; gap:12px; align-content:start; background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:18px; min-width:0}
+.why .col{display:grid; gap:10px; align-content:start; background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:16px; min-width:0}
 .why .col > h3{display:flex; justify-content:space-between; gap:8px; align-items:baseline; flex-wrap:wrap}
-.mech{display:grid; gap:4px; padding-top:10px; border-top:1px solid var(--line)}
-.mech h4{font-size:.95rem}
-.mech p{font-size:.92rem; color:var(--ink-2)}
-.say{display:grid; gap:0; grid-template-columns:1fr 1fr; border:1px solid var(--line); border-radius:var(--r); overflow:hidden}
-.say > div{padding:12px 14px; border-bottom:1px solid var(--line); font-size:.93rem; color:var(--ink-2); min-width:0}
-.say .h{font-size:.74rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase}
-.say .no{background:var(--rose-soft)} .say .yes{background:var(--jade-soft)}
-.say .no.h{color:var(--rose)} .say .yes.h{color:var(--jade)}
-@media (max-width:560px){ .say{grid-template-columns:1fr} }
+.mech{display:grid; gap:3px; padding-top:9px; border-top:1px solid var(--line)}
+.mech h4{font-size:.93rem; display:flex; gap:8px; flex-wrap:wrap; align-items:center}
+.mech p{font-size:.9rem; color:var(--ink-2)}
 
-/* so sánh */
-.cmp th[scope="row"]{text-transform:none; letter-spacing:0; font-size:.86rem; color:var(--ink); width:150px}
-.cmp td{min-width:220px}
+/* chăm sóc da */
+.pairs{display:grid; gap:12px; grid-template-columns:repeat(auto-fit, minmax(min(100%, 420px), 1fr))}
+.pair{display:grid; grid-template-columns:1fr 28px 1fr; background:var(--surface); border:1px solid var(--line); border-radius:var(--r); overflow:hidden}
+.pair > div{padding:12px 14px; display:grid; gap:3px; align-content:start}
+.pair .d{background:var(--amber-soft)} .pair .t{background:var(--jade-soft)}
+.pair .arrow{display:grid; place-items:center; color:var(--muted); font-size:1.1rem; background:var(--surface)}
+.pair .k{font-size:.7rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase}
+.pair .d .k{color:var(--amber)} .pair .t .k{color:var(--jade)}
+.pair b{font-size:.94rem; color:var(--ink)}
+.pair span{font-size:.84rem; color:var(--ink-2)}
+.pair .act{grid-column:1 / -1; border-top:1px solid var(--line); font-size:.86rem; color:var(--ink); padding:9px 14px}
+.routine{display:grid; gap:14px}
+.rrow{display:grid; grid-template-columns:76px 1fr; gap:12px; align-items:center}
+.rrow .when{display:grid; justify-items:center; gap:2px; font-weight:600; font-size:.86rem; color:var(--ink)}
+.rrow .when .ib{width:44px; height:44px; border-radius:50%; display:grid; place-items:center; background:var(--amber-soft); color:var(--amber)}
+.rrow.night .when .ib{background:var(--indigo-soft); color:var(--indigo)}
+.rsteps{display:flex; flex-wrap:wrap; gap:8px; align-items:center}
+.rstep{display:inline-flex; gap:7px; align-items:center; background:var(--surface-2); border-radius:999px; padding:6px 12px 6px 8px; font-size:.84rem; color:var(--ink)}
+.rstep .ico{width:18px; height:18px; color:var(--jade)}
+.rsteps .sep{color:var(--muted)}
+
+/* quốc gia, người dạy */
+.cmp th[scope="row"]{text-transform:none; letter-spacing:0; font-size:.86rem; color:var(--ink); width:140px}
+.cmp td{min-width:200px}
+.avatar{width:46px; height:46px; border-radius:50%; display:grid; place-items:center; font-family:var(--f-display); font-weight:600; font-size:1.05rem; color:#fff; flex:none}
+.who{display:flex; gap:12px; align-items:center}
 
 /* công cụ */
-.tool{background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:20px; display:grid; gap:16px; min-width:0}
+.tool{background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:20px; display:grid; gap:14px; min-width:0}
 .checks{display:grid; gap:8px}
-.checks label{display:grid; grid-template-columns:20px 1fr; gap:10px; align-items:start; font-size:.94rem; color:var(--ink-2); cursor:pointer}
+.checks label{display:grid; grid-template-columns:20px 1fr; gap:10px; align-items:start; font-size:.93rem; color:var(--ink-2); cursor:pointer}
 .checks input{margin-top:4px; accent-color:var(--jade)}
 .checks .grp{font-size:.74rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); margin-top:8px}
 .result{border-radius:var(--r); padding:14px 16px; display:grid; gap:6px; border:1px solid var(--line)}
@@ -260,7 +339,7 @@ td.num, th.num{text-align:right; font-variant-numeric:tabular-nums}
 .result.adj{background:var(--amber-soft)} .result.adj .st{color:var(--warn)}
 .result.stop{background:var(--rose-soft)} .result.stop .st{color:var(--bad)}
 .result ul{margin:0; padding-left:1.1em; font-size:.92rem; color:var(--ink)}
-.form{display:grid; gap:12px; grid-template-columns:repeat(auto-fit, minmax(min(100%, 200px), 1fr))}
+.form{display:grid; gap:12px; grid-template-columns:repeat(auto-fit, minmax(min(100%, 190px), 1fr))}
 .form label{display:grid; gap:4px; font-size:.82rem; font-weight:600; color:var(--ink-2)}
 select{font:inherit; font-size:.95rem; padding:9px 10px; border-radius:8px; border:1px solid var(--line); background:var(--surface); color:var(--ink)}
 .plan{list-style:none; margin:0; padding:0; display:grid; gap:8px}
@@ -272,13 +351,23 @@ select{font:inherit; font-size:.95rem; padding:9px 10px; border-radius:8px; bord
 .prog{height:8px; border-radius:99px; background:var(--surface-2); overflow:hidden}
 .prog i{display:block; height:100%; background:var(--jade); border-radius:99px; transition:width .2s}
 .months{display:grid; gap:16px; grid-template-columns:repeat(auto-fit, minmax(min(100%, 280px), 1fr))}
+.say{display:grid; grid-template-columns:1fr 1fr; border:1px solid var(--line); border-radius:var(--r); overflow:hidden}
+.say > div{padding:11px 14px; border-bottom:1px solid var(--line); font-size:.92rem; color:var(--ink-2); min-width:0}
+.say .h{font-size:.74rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase}
+.say .no{background:var(--rose-soft)} .say .yes{background:var(--jade-soft)}
+.say .no.h{color:var(--rose)} .say .yes.h{color:var(--jade)}
+@media (max-width:560px){ .say{grid-template-columns:1fr} }
 
 .fit{display:inline-flex; gap:3px; vertical-align:middle}
 .fit i{width:9px; height:9px; border-radius:50%; border:1.5px solid var(--jade)}
 .fit i.f{background:var(--jade)}
-.niche-meta{display:flex; flex-wrap:wrap; gap:6px 12px; font-size:.8rem; color:var(--muted); align-items:center}
+.meta{display:flex; flex-wrap:wrap; gap:6px 12px; font-size:.8rem; color:var(--muted); align-items:center}
+.list2{display:grid; gap:10px; grid-template-columns:repeat(auto-fit, minmax(min(100%, 300px), 1fr))}
+.list2 > div{border-left:3px solid var(--line); padding:2px 0 2px 12px; display:grid; gap:2px}
+.list2 b{font-size:.93rem; color:var(--ink)}
+.list2 span{font-size:.88rem; color:var(--ink-2)}
 
-.src{margin:0; padding-left:2.2em; display:grid; gap:6px; font-size:.88rem; color:var(--ink-2)}
+.src{margin:0; padding-left:2.2em; display:grid; gap:6px; font-size:.86rem; color:var(--ink-2)}
 .src li{padding-left:4px; scroll-margin-top:80px}
 .src li:target{background:var(--amber-soft); border-radius:4px}
 .src a{word-break:break-word}
@@ -287,7 +376,7 @@ footer{border-top:1px solid var(--line); padding-block:24px; font-size:.84rem; c
 </head>
 <body>
 <header class="toc"><nav id="toc" aria-label="Mục lục">
-  <a href="#mo-dau">Mở đầu</a><a href="#nguon-goc">1 · Nguồn gốc</a><a href="#the-gioi">2 · Thế giới</a><a href="#viet-nam">3 · Việt Nam</a><a href="#ngach">4 · Ngách</a><a href="#khuon-mat">5 · Bản đồ khuôn mặt</a><a href="#bach-huyet">6 · Bạch huyết</a><a href="#ba-lang-kinh">7 · Tây y · Đông y · Diện chẩn</a><a href="#cham-soc-da">8 · Chăm sóc da</a><a href="#phuong-phap">9 · Phương pháp khác</a><a href="#so-sanh">10 · So sánh quốc gia</a><a href="#nguoi-day">11 · Người dạy</a><a href="#cong-cu">12 · Bộ công cụ</a><a href="#nguon">Nguồn</a>
+  <a href="#mo-dau">Mở đầu</a><a href="#nguon-goc">1 · Nguồn gốc</a><a href="#the-gioi">2 · Thế giới</a><a href="#viet-nam">3 · Việt Nam</a><a href="#ngach">4 · Ngách</a><a href="#khuon-mat">5 · Bản đồ khuôn mặt</a><a href="#bach-huyet">6 · Bạch huyết</a><a href="#ba-lang-kinh">7 · Tây y · Đông y · Diện chẩn</a><a href="#cham-soc-da">8 · Chăm sóc da</a><a href="#phuong-phap">9 · Phương pháp khác</a><a href="#so-sanh">10 · Các nước</a><a href="#nguoi-day">11 · Người dạy</a><a href="#cong-cu">12 · Bộ công cụ</a><a href="#nguon">Nguồn</a>
 </nav></header>
 
 <main class="wrap">
@@ -297,38 +386,34 @@ footer{border-top:1px solid var(--line); padding-block:24px; font-size:.84rem; c
   <div class="hero-text">
     <span class="eyebrow">Tài liệu cho giáo viên yoga phục hồi · 10/2026</span>
     <h1>Bản đồ <em>Face Yoga</em></h1>
-    <p class="lede">Nguồn gốc, thị trường thế giới và Việt Nam, giải phẫu cơ và hạch bạch huyết, ba cách giải thích Tây y, Đông y, Diện chẩn, cùng bộ công cụ để bắt đầu dạy. Bấm vào khuôn mặt ở Phần 5 để xem từng cơ, hạch và huyệt.</p>
+    <p class="lede">Nguồn gốc, thị trường, giải phẫu, ba cách nhìn Tây y, Đông y, Diện chẩn và bộ công cụ để bắt đầu dạy.</p>
     <ol class="tldr">
-      <li><span><strong>Không có một người phát minh.</strong> Face yoga hiện đại là chỗ gặp của tư thế sư tử trong Hatha yoga, vọng chẩn Đông y, massage Kobido của Nhật và phong trào tập cơ mặt phương Tây. Trào lưu bùng lên từ 2006–2007.</span></li>
-      <li><span><strong>Bằng chứng nhỏ nhưng tích cực.</strong> 16 phụ nữ tập 20 tuần được bác sĩ đánh giá trẻ hơn khoảng 3 tuổi.<sup class="c" data-s="alam"></sup> Chưa có thử nghiệm lớn có nhóm chứng.<sup class="c" data-s="vanborsel"></sup></span></li>
-      <li><span><strong>Thị trường ngách trong một ngành khổng lồ.</strong> Face yoga ước khoảng 1 tỷ USD năm 2027,<sup class="c" data-s="gvr"></sup> nằm trong ngành chăm sóc cá nhân và làm đẹp 1,21 nghìn tỷ USD.<sup class="c" data-s="gwi"></sup></span></li>
-      <li><span><strong>Việt Nam đang ở giai đoạn đầu.</strong> Chủ yếu là khoá online giá rẻ và workshop lẻ, trong khi thị trường làm đẹp đã khoảng 2,7 tỷ USD.<sup class="c" data-s="dbnd"></sup></span></li>
-      <li><span><strong>Lợi thế của bạn:</strong> giải phẫu, hơi thở, điều hoà thần kinh và sàng lọc an toàn. Đây đúng là những gì các khoá face yoga đại trà còn thiếu.</span></li>
+      <li><span><strong>Không có một người phát minh.</strong> Face yoga là chỗ gặp của yoga, Đông y, Kobido và thể dục mặt phương Tây; bùng lên từ 2006–2007.</span></li>
+      <li><span><strong>Bằng chứng nhỏ nhưng tích cực:</strong> tập 20 tuần, bác sĩ đánh giá trẻ hơn khoảng 3 tuổi.<sup class="c" data-s="alam"></sup> Chưa có thử nghiệm lớn.<sup class="c" data-s="vanborsel,scielo"></sup></span></li>
+      <li><span><strong>Ngách nhỏ trong ngành lớn:</strong> khoảng 1 tỷ USD<sup class="c" data-s="gvr"></sup> trong ngành làm đẹp 1,21 nghìn tỷ USD.<sup class="c" data-s="gwi"></sup></span></li>
+      <li><span><strong>Việt Nam mới ở bước đầu:</strong> khoá online giá rẻ và workshop lẻ.</span></li>
+      <li><span><strong>Lợi thế của bạn:</strong> giải phẫu, hơi thở, thần kinh, sàng lọc an toàn.</span></li>
     </ol>
   </div>
   <figure>
-    <img src="img/hero.webp" alt="Minh hoạ người phụ nữ ngồi thiền, đầu ngón tay đặt nhẹ trên gò má, bên cạnh đá gua sha và con lăn" onerror="this.closest('figure').hidden=true">
-    <figcaption>Minh hoạ tạo bằng AI.</figcaption>
+    <img src="img/hero.webp" alt="Minh hoạ người phụ nữ ngồi thiền, đầu ngón tay đặt nhẹ trên gò má" onerror="this.closest('figure').hidden=true">
+    <figcaption>Ảnh minh hoạ trên trang được tạo bằng AI.</figcaption>
   </figure>
 </section>
+<nav class="vtoc" id="vtoc" aria-label="Các chương"></nav>
 
 <!-- ================= 1. NGUỒN GỐC ================= -->
 <section id="nguon-goc" class="chapter">
   <div class="chapter-head">
     <span class="eyebrow">Phần 1</span>
     <h2>Face yoga đến từ đâu?</h2>
-    <p class="lede">Nguồn gốc chính xác của face yoga hiện đại không rõ ràng.<sup class="c" data-s="ctv"></sup> Thứ ta gọi là face yoga hôm nay là chỗ gặp của bốn dòng chảy.</p>
+    <p class="lede">Nguồn gốc chính xác chưa rõ.<sup class="c" data-s="ctv"></sup> Face yoga hôm nay là chỗ gặp của bốn dòng chảy.</p>
   </div>
-  <div class="grid g4">
-    <div class="card"><span class="tag">Yoga cổ điển</span><h3>Tư thế sư tử</h3><p>Simhasana trong Hatha Yoga Pradipika (thế kỷ 15) huy động lưỡi, hàm, mắt và cổ trước. Các bài nhìn như trataka là tiền thân của yoga mắt.<sup class="c" data-s="hyp"></sup></p></div>
-    <div class="card"><span class="tag">Đông y</span><h3>Mặt là tấm gương</h3><p>Hoàng Đế Nội Kinh coi khuôn mặt là nơi khí huyết dồn lên và là bản đồ của tạng phủ. Đây là nền của vọng chẩn, xoa bóp mặt và gua sha.<sup class="c" data-s="lk4,lk49"></sup></p></div>
-    <div class="card"><span class="tag">Nhật Bản</span><h3>Kobido</h3><p>Massage mặt từ năm 1472 với hơn 40 kỹ thuật tay. Kobido kết hợp Anma, kinh lạc, bấm huyệt và dẫn lưu.<sup class="c" data-s="kobido"></sup></p></div>
-    <div class="card"><span class="tag">Phương Tây</span><h3>Thể dục cho mặt</h3><p>Từ báo chí thập niên 1970–80 đến Facercise (1995), rồi Face Yoga Method (2006), The Yoga Face (2007) và Danielle Collins.<sup class="c" data-s="takatsu,hagen,collins"></sup></p></div>
-  </div>
-  <div class="grid" style="gap:12px">
-    <div class="chips" id="tl-filter" role="group" aria-label="Lọc dòng thời gian"></div>
-    <ol class="tl" id="timeline"></ol>
-  </div>
+  <div class="grid g4" id="streams"></div>
+  <details class="more" open>
+    <summary>Dòng thời gian</summary>
+    <div class="in"><div class="chips" id="tl-filter" role="group" aria-label="Lọc dòng thời gian"></div><ol class="tl" id="timeline"></ol></div>
+  </details>
 </section>
 
 <!-- ================= 2. THẾ GIỚI ================= -->
@@ -336,53 +421,47 @@ footer{border-top:1px solid var(--line); padding-block:24px; font-size:.84rem; c
   <div class="chapter-head">
     <span class="eyebrow">Phần 2</span>
     <h2>Thị trường thế giới</h2>
-    <p class="lede">Face yoga hiếm khi được thống kê riêng. Các con số dưới đây đến từ báo cáo thương mại với định nghĩa khác nhau, nên chỉ dùng để hình dung quy mô. Mỗi ô ghi rõ độ tin cậy.</p>
+    <p class="lede">Face yoga hiếm khi được thống kê riêng; các con số chỉ để hình dung quy mô, mỗi ô ghi rõ độ tin cậy.</p>
   </div>
-  <div class="grid g3">
-    <div class="tile"><span class="num">6,3 nghìn tỷ USD</span><span class="lab">Kinh tế wellness toàn cầu năm 2023, dự báo 9 nghìn tỷ USD năm 2028.<sup class="c" data-s="gwi"></sup></span><span class="rel rel-hi">Độ tin cậy: <b>Cao</b> · Global Wellness Institute</span></div>
-    <div class="tile"><span class="num">1,21 nghìn tỷ USD</span><span class="lab">Chăm sóc cá nhân và làm đẹp, ngành lớn nhất trong 11 ngành wellness, tăng 6,2% so với 2022.<sup class="c" data-s="gwi"></sup></span><span class="rel rel-hi">Độ tin cậy: <b>Cao</b></span></div>
-    <div class="tile"><span class="num">≈ 1,02 tỷ USD</span><span class="lab">Face yoga dự báo năm 2027, từ 779,5 triệu USD năm 2020 (tăng 5,3%/năm).<sup class="c" data-s="gvr"></sup></span><span class="rel rel-md">Độ tin cậy: <b>Trung bình</b> · nguồn thứ cấp, định nghĩa hẹp</span></div>
-    <div class="tile"><span class="num">14,1%/năm</span><span class="lab">Tăng trưởng dự báo của thiết bị face yoga (vi dòng, LED, dụng cụ) giai đoạn 2026–2033.<sup class="c" data-s="accio"></sup></span><span class="rel rel-lo">Độ tin cậy: <b>Thấp</b> · tổng hợp thương mại</span></div>
-    <div class="tile"><span class="num">≈ 367.000 USD</span><span class="lab">Doanh thu ước tính mỗi tháng của một app face yoga có hướng dẫn, kèm khoảng 33.000 lượt cài mới.<sup class="c" data-s="apps"></sup></span><span class="rel rel-lo">Độ tin cậy: <b>Thấp</b> · ước tính bên thứ ba</span></div>
-    <div class="tile"><span class="num">+60%</span><span class="lab">Tăng trưởng doanh số nhóm sản phẩm “slow aging” của Olive Young (Hàn Quốc) năm 2024.<sup class="c" data-s="oliveyoung"></sup></span><span class="rel rel-hi">Độ tin cậy: <b>Cao</b> · số liệu doanh nghiệp</span></div>
+  <div class="lead">
+    <figure><img src="img/m_global.webp" alt="Minh hoạ người phụ nữ tập face yoga theo bài học trên máy tính bảng" loading="lazy"></figure>
+    <div class="grid g2">
+      <div class="tile"><span class="num">6,3 nghìn tỷ USD</span><span class="lab">Kinh tế wellness 2023, dự báo 9 nghìn tỷ năm 2028.<sup class="c" data-s="gwi"></sup></span><span class="rel rel-hi">Tin cậy: <b>Cao</b></span></div>
+      <div class="tile"><span class="num">1,21 nghìn tỷ USD</span><span class="lab">Chăm sóc cá nhân và làm đẹp, ngành lớn nhất trong 11 ngành wellness.<sup class="c" data-s="gwi"></sup></span><span class="rel rel-hi">Tin cậy: <b>Cao</b></span></div>
+      <div class="tile"><span class="num">≈ 1,02 tỷ USD</span><span class="lab">Face yoga dự báo 2027, từ 779,5 triệu (2020).<sup class="c" data-s="gvr"></sup></span><span class="rel rel-md">Tin cậy: <b>Trung bình</b></span></div>
+      <div class="tile"><span class="num">+60%</span><span class="lab">Doanh số nhóm “slow aging” của Olive Young năm 2024.<sup class="c" data-s="oliveyoung"></sup></span><span class="rel rel-hi">Tin cậy: <b>Cao</b></span></div>
+    </div>
   </div>
   <div class="grid g2">
-    <div class="card">
-      <h3>Động lực tăng trưởng</h3>
-      <ul>
-        <li><strong>Ưa không xâm lấn và “tự nhiên”.</strong> Hagen định vị face yoga là lựa chọn thay cho Botox và filler ngay từ 2007.<sup class="c" data-s="hagen"></sup></li>
-        <li><strong>Video ngắn.</strong> Bài tập mặt rất lên hình và dễ làm thử thách.<sup class="c" data-s="cosbiz"></sup></li>
-        <li><strong>Kinh tế ứng dụng.</strong> App như FaceYogi, Luvly chạy mô hình dùng thử rồi thu phí thuê bao.<sup class="c" data-s="apps"></sup></li>
-        <li><strong>“Slow aging”.</strong> Làm đẹp gắn với giấc ngủ, stress và vận động.<sup class="c" data-s="oliveyoung"></sup></li>
-        <li><strong>Cú hích khoa học.</strong> Nghiên cứu Northwestern 2018 được báo chí khắp thế giới đưa tin.<sup class="c" data-s="sd2018"></sup></li>
-        <li><strong>Thiết bị tại nhà.</strong> Vi dòng, LED, dụng cụ có nhiệt.<sup class="c" data-s="accio"></sup></li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Những tên tuổi định hình thị trường</h3>
-      <ul>
-        <li><strong>Fumiko Takatsu</strong> (Nhật/Mỹ): Face Yoga Method từ 2006, có đào tạo giáo viên.<sup class="c" data-s="takatsu"></sup></li>
-        <li><strong>Danielle Collins</strong> (Anh): hơn 15 năm dạy, dạy cho hàng triệu người qua sách, video, khoá học.<sup class="c" data-s="collins"></sup></li>
-        <li><strong>Annelise Hagen</strong> (Mỹ): giáo viên yoga ở New York, tác giả The Yoga Face.<sup class="c" data-s="hagen"></sup></li>
-        <li><strong>Gary Sikorski</strong> (Mỹ): Happy Face Yoga, 18 bài cho các cơ mặt, cổ, da đầu. Chương trình của ông được dùng trong nghiên cứu Northwestern.<sup class="c" data-s="sikorski,sd2018"></sup></li>
-        <li><strong>App:</strong> FaceYogi, Luvly và nhiều app nhỏ.<sup class="c" data-s="apps"></sup></li>
-      </ul>
-    </div>
+    <div class="card viz"><h3>Face yoga nhỏ cỡ nào?</h3><p>Diện tích mỗi hình vuông tỷ lệ với quy mô thị trường.</p><div id="scale-viz"></div></div>
+    <div class="card"><h3>Vì sao đang tăng</h3><div class="iconrow" id="drivers"></div></div>
   </div>
-  <div class="card">
-    <h3>Bằng chứng khoa học hiện có</h3>
-    <div class="tbl-wrap"><table>
-      <thead><tr><th>Nghiên cứu</th><th>Thiết kế</th><th>Kết quả chính</th><th>Mức</th></tr></thead>
+  <div class="card viz">
+    <h3>Bằng chứng khoa học đang ở đâu?</h3>
+    <div id="pyramid"></div>
+    <p><strong>Câu nói an toàn với học viên:</strong> “Tập đều khoảng 20 tuần có thể làm má đầy hơn và mặt trông trẻ hơn một chút. Nghiên cứu còn nhỏ.”</p>
+    <details class="more"><summary>Chi tiết từng nghiên cứu</summary><div class="in"><div class="tbl-wrap"><table>
+      <thead><tr><th>Nghiên cứu</th><th>Thiết kế</th><th>Kết quả chính</th></tr></thead>
       <tbody>
-        <tr><td>Alam và cs., JAMA Dermatology 2018<sup class="c" data-s="alam"></sup></td><td>16 phụ nữ 40–65 tuổi; 30 phút mỗi ngày trong 8 tuần, sau đó cách ngày đến tuần 20; không có nhóm chứng</td><td>Tuổi ước tính giảm từ 50,8 xuống 48,1; má trên và má dưới đầy hơn</td><td><span class="ev ev-weak">Sơ bộ</span></td></tr>
-        <tr><td>Hwang và cs., Aesthetic Surgery Journal 2018<sup class="c" data-s="hwang"></sup></td><td>50 phụ nữ; dụng cụ tập cơ mặt 30 giây × 2 lần/ngày trong 8 tuần; đo siêu âm</td><td>Thiết diện cơ gò má lớn và cơ hai bụng tăng; khoảng cách bề mặt vùng má giữa và đường hàm giảm</td><td><span class="ev ev-weak">Sơ bộ</span></td></tr>
-        <tr><td>Güzel và cs., Medicina 2025<sup class="c" data-s="guzel"></sup></td><td>12 phụ nữ; 8 tuần (2 buổi có giáo viên + 5 buổi ở nhà mỗi tuần); đo bằng Myoton</td><td>Cơ nông giảm trương lực và độ cứng; cơ mút và cơ hai bụng tăng; mọi cơ đều đàn hồi hơn</td><td><span class="ev ev-weak">Sơ bộ</span></td></tr>
-        <tr><td>Van Borsel và cs., tổng quan hệ thống 2014<sup class="c" data-s="vanborsel"></sup></td><td>9 nghiên cứu, đều ở Nam Mỹ</td><td>Tất cả báo cáo tích cực nhưng không ngẫu nhiên, thiếu nhóm chứng, chủ yếu đo chủ quan</td><td><span class="ev ev-mid">Tổng quan</span></td></tr>
-        <tr><td>NCT06765408<sup class="c" data-s="nct"></sup></td><td>Thử nghiệm đã đăng ký về tác động của face yoga lên cơ biểu cảm</td><td>Đáng theo dõi kết quả</td><td><span class="ev ev-trad">Đang chờ</span></td></tr>
-      </tbody>
-    </table></div>
-    <p><strong>Câu nói an toàn với học viên:</strong> “Tập đều khoảng 20 tuần có thể làm má đầy hơn và mặt trông trẻ hơn một chút theo đánh giá của bác sĩ da liễu. Nghiên cứu còn nhỏ, chưa có thử nghiệm lớn có nhóm chứng.”</p>
+        <tr><td>Alam và cs. 2018<sup class="c" data-s="alam,sd2018"></sup></td><td>27 phụ nữ 40–65 tuổi tham gia, 16 hoàn thành; 32 bài, 30 phút mỗi ngày 8 tuần rồi cách ngày đến tuần 20; không nhóm chứng</td><td>Tuổi ước tính 50,8 → 48,1; má trên và má dưới đầy hơn</td></tr>
+        <tr><td>Hwang và cs. 2018<sup class="c" data-s="hwang"></sup></td><td>50 phụ nữ; dụng cụ PAO 30 giây × 2 lần/ngày, 8 tuần; đo siêu âm</td><td>Thiết diện cơ gò má lớn và cơ hai bụng tăng; đường hàm gọn hơn</td></tr>
+        <tr><td>Güzel và cs. 2025<sup class="c" data-s="guzel"></sup></td><td>12 phụ nữ; 8 tuần; đo bằng Myoton</td><td>Cơ nông dịu lại; cơ mút, cơ hai bụng khoẻ lên; mọi cơ đàn hồi hơn</td></tr>
+        <tr><td>Van Borsel và cs. 2014<sup class="c" data-s="vanborsel"></sup></td><td>Tổng quan 9 nghiên cứu (Nam Mỹ)</td><td>Chưa đủ chất lượng để kết luận</td></tr>
+        <tr><td>de Manincor và cs. 2024<sup class="c" data-s="scielo"></sup></td><td>Tổng quan 7 nghiên cứu</td><td>Có vẻ có ích nhưng bằng chứng chưa đủ</td></tr>
+        <tr><td>NCT06765408<sup class="c" data-s="nct"></sup></td><td>Thử nghiệm đã đăng ký</td><td>Đáng theo dõi</td></tr>
+      </tbody></table></div></div></details>
   </div>
+  <details class="more">
+    <summary>Những tên tuổi định hình thị trường</summary>
+    <div class="in list2">
+      <div><b>Fumiko Takatsu (Nhật / Mỹ)</b><span>Face Yoga Method từ 2006, có đào tạo giáo viên.<sup class="c" data-s="takatsu"></sup></span></div>
+      <div><b>Danielle Collins (Anh)</b><span>Hơn 15 năm dạy; sách, video, khoá học.<sup class="c" data-s="collins"></sup></span></div>
+      <div><b>Annelise Hagen (Mỹ)</b><span>Giáo viên yoga ở New York, tác giả The Yoga Face.<sup class="c" data-s="hagen"></sup></span></div>
+      <div><b>Gary Sikorski (Mỹ)</b><span>Happy Face Yoga; thiết kế chương trình cho nghiên cứu Northwestern.<sup class="c" data-s="sikorski,sd2018"></sup></span></div>
+      <div><b>App FaceYogi, Luvly</b><span>Doanh thu ước tính trung bình khoảng 367.000 USD/tháng mỗi app trong nhóm.<sup class="c" data-s="apps"></sup></span></div>
+      <div><b>Thiết bị tại nhà</b><span>Dự báo tăng 14,1%/năm (nguồn độ tin cậy thấp).<sup class="c" data-s="accio"></sup></span></div>
+    </div>
+  </details>
 </section>
 
 <!-- ================= 3. VIỆT NAM ================= -->
@@ -390,50 +469,33 @@ footer{border-top:1px solid var(--line); padding-block:24px; font-size:.84rem; c
   <div class="chapter-head">
     <span class="eyebrow">Phần 3</span>
     <h2>Thị trường Việt Nam</h2>
-    <p class="lede">Thị trường làm đẹp lớn, tăng đều và rất đông cơ sở dịch vụ. Face yoga thì mới ở giai đoạn đầu: chủ yếu là nội dung miễn phí, khoá online giá thấp và vài workshop do giáo viên có chứng chỉ quốc tế dạy.</p>
+    <p class="lede">Ngành làm đẹp lớn và đông cơ sở; face yoga mới ở giai đoạn đầu.</p>
   </div>
-  <div class="grid g4">
-    <div class="tile"><span class="num">2,66 tỷ USD</span><span class="lab">Doanh thu làm đẹp và chăm sóc cá nhân năm 2024, tăng khoảng 3,3%/năm đến 2028.<sup class="c" data-s="dbnd"></sup></span></div>
-    <div class="tile"><span class="num">≈ 2,79 tỷ USD</span><span class="lab">Dự báo năm 2025. Mảng chăm sóc da và mỹ phẩm tăng nhanh nhất.<sup class="c" data-s="bcompany"></sup></span></div>
-    <div class="tile"><span class="num">37,5%</span><span class="lab">Người dân tập thể thao thường xuyên năm 2024 (ước tính của cơ quan thể thao).<sup class="c" data-s="ken"></sup></span></div>
-    <div class="tile"><span class="num">27%</span><span class="lab">Tỷ lệ studio yoga (phần lớn là hot yoga) trong các studio mới dự kiến mở năm 2025.<sup class="c" data-s="ken"></sup></span></div>
+  <div class="lead">
+    <figure><img src="img/m_vn.webp" alt="Minh hoạ lớp face yoga nhỏ trong studio ở Sài Gòn" loading="lazy"></figure>
+    <div class="grid g2">
+      <div class="tile"><span class="num">2,66 tỷ USD</span><span class="lab">Làm đẹp và chăm sóc cá nhân 2024, tăng khoảng 3,3%/năm.<sup class="c" data-s="dbnd"></sup></span></div>
+      <div class="tile"><span class="num">5.000+</span><span class="lab">Thẩm mỹ viện và salon năm 2020; dự kiến khoảng 10.000 năm 2025.<sup class="c" data-s="dbnd"></sup></span></div>
+      <div class="tile"><span class="num">37,5%</span><span class="lab">Người dân tập thể thao thường xuyên năm 2024.<sup class="c" data-s="ken"></sup></span></div>
+      <div class="tile"><span class="num">≈ 492 triệu USD</span><span class="lab">Thị trường dịch vụ thể hình năm 2025.<sup class="c" data-s="ken"></sup></span></div>
+    </div>
+  </div>
+  <div class="card">
+    <h3>Face yoga ở Việt Nam đang ở bước nào?</h3>
+    <div class="stages" id="stages"></div>
   </div>
   <div class="grid g2">
-    <div class="chart-box" id="vn-chart">
-      <h3>Số thẩm mỹ viện và beauty salon ở Việt Nam</h3>
-      <p class="muted" style="font-size:.86rem">Chỉ có 3 mốc số liệu. Đường nối không thể hiện diễn biến từng năm; đoạn nét đứt là dự kiến.<sup class="c" data-s="dbnd"></sup></p>
+    <div class="card viz" id="vn-chart">
+      <h3>Số thẩm mỹ viện và salon</h3>
+      <p class="small muted">Chỉ có 3 mốc số liệu; đoạn nét đứt là dự kiến.<sup class="c" data-s="dbnd"></sup></p>
       <div id="vn-chart-svg"></div>
-      <details><summary>Xem dạng bảng</summary>
-        <table><thead><tr><th>Năm</th><th class="num">Số cơ sở</th></tr></thead><tbody><tr><td>2000</td><td class="num">≈ 100</td></tr><tr><td>2020</td><td class="num">5.000</td></tr><tr><td>2025 (dự kiến)</td><td class="num">≈ 10.000</td></tr></tbody></table>
-      </details>
-    </div>
-    <div class="card">
-      <h3>Face yoga ở Việt Nam đang phát triển ra sao</h3>
-      <ul>
-        <li><strong>Nội dung miễn phí, kênh y tế.</strong> Chuỗi nhà thuốc và bệnh viện viết bài hướng dẫn face yoga,<sup class="c" data-s="lc_fy"></sup> đồng thời nhắc rằng đây là biện pháp hỗ trợ, không thay điều trị da liễu.<sup class="c" data-s="vinmec"></sup></li>
-        <li><strong>Khoá online giá thấp.</strong> Khoá của Nguyễn Hiếu (CEO Zenlife Yoga) trên Unica có 21 bài, 3 giờ 16 phút, giá 299.000–700.000đ, hơn 18.000 học viên.<sup class="c" data-s="unica"></sup> Trên Udemy có khoá “28 ngày điêu khắc gương mặt”.<sup class="c" data-s="udemy"></sup></li>
-        <li><strong>Workshop tại studio.</strong> Ally Vân Anh và Lenka Seminova, có chứng chỉ Face Yoga Method từ 2021, dạy workshop 1,5 giờ giá 500.000đ ở Sài Gòn (2022).<sup class="c" data-s="athas"></sup></li>
-        <li><strong>Hạ tầng đào tạo yoga trị liệu đã có.</strong> Có chương trình Yoga trị liệu 200 giờ, Yin Yoga, Yoga trị liệu online,<sup class="c" data-s="ytl,omf,ydaily"></sup> nhưng chưa có chuẩn đào tạo face yoga bằng tiếng Việt dựa trên bằng chứng.</li>
-        <li><strong>Hệ sinh thái làm đẹp rất đông.</strong> Hơn 3.000 thương hiệu dự triển lãm làm đẹp ở TP.HCM.<sup class="c" data-s="plo"></sup></li>
-      </ul>
-    </div>
-  </div>
-  <div class="grid g2">
-    <div class="card">
-      <h3>Khoảng trống bạn có thể lấp</h3>
-      <ul>
-        <li>Giáo trình tiếng Việt có giải phẫu, bạch huyết và sàng lọc an toàn, không chỉ là danh sách bài tập rời.</li>
-        <li>Kết hợp cổ vai gáy, hơi thở và hệ thần kinh. Đây là thế mạnh tự nhiên của yoga phục hồi.</li>
-        <li>Kênh giới thiệu hai chiều với nha sĩ, bác sĩ da liễu, chuyên viên vật lý trị liệu.</li>
-        <li>Câu chữ quảng bá trung thực, có nguồn, không hứa “trẻ hoá 10 tuổi”.</li>
-      </ul>
     </div>
     <div class="card" style="border-color:var(--rose)">
-      <h3>Ranh giới pháp lý cần nhớ</h3>
+      <h3>Ranh giới pháp lý</h3>
       <ul>
-        <li>Luật Khám bệnh, chữa bệnh 2023 (hiệu lực 01/01/2024) quy định hoạt động khám chữa bệnh phải có giấy phép.<sup class="c" data-s="luat"></sup> Lớp face yoga là hoạt động rèn luyện, chăm sóc sức khoẻ; không chẩn đoán, không “điều trị”.</li>
-        <li>Năm 2012, Sở Y tế TP.HCM tuyên bố một phương pháp chữa bệnh chưa được Bộ Y tế cho phép thì không được dùng để điều trị; trường hợp được nêu là liệu pháp diện chẩn.<sup class="c" data-s="sggp"></sup></li>
-        <li>Dùng cụm “hỗ trợ thư giãn, chăm sóc”, tránh “chữa”, “trị”, “thải độc”. Xem bảng câu chữ ở Phần 12.</li>
+        <li>Khám, chữa bệnh phải có giấy phép (Luật 15/2023).<sup class="c" data-s="luat"></sup> Lớp face yoga là rèn luyện, chăm sóc; không chẩn đoán, không “điều trị”.</li>
+        <li>Năm 2012, Sở Y tế TP.HCM yêu cầu không dùng, quảng bá Diện chẩn để chữa bệnh khi chưa được Bộ Y tế cho phép.<sup class="c" data-s="sggp"></sup></li>
+        <li>Dùng cụm “hỗ trợ thư giãn, chăm sóc”; tránh “chữa”, “trị”, “thải độc”.</li>
       </ul>
     </div>
   </div>
@@ -444,10 +506,10 @@ footer{border-top:1px solid var(--line); padding-block:24px; font-size:.84rem; c
   <div class="chapter-head">
     <span class="eyebrow">Phần 4</span>
     <h2>Các ngách đang phát triển</h2>
-    <p class="lede">Chấm “độ hợp” là mức gần với kỹ năng sẵn có của giáo viên yoga phục hồi (5 = gần nhất). Nhu cầu và mức bằng chứng là đánh giá tổng hợp từ các nguồn ở Phần 2–3 và Phần 9, dùng để so sánh tương đối.</p>
+    <p class="lede">Chấm xanh là mức gần với kỹ năng sẵn có của giáo viên yoga phục hồi (5 = gần nhất).</p>
   </div>
-  <div class="chips" id="niche-filter" role="group" aria-label="Lọc ngách"></div>
-  <div class="grid g3" id="niches"></div>
+  <div class="grid g4" id="niche-top"></div>
+  <details class="more"><summary>6 ngách khác</summary><div class="in list2" id="niche-rest"></div></details>
 </section>
 
 <!-- ================= 5. KHUÔN MẶT ================= -->
@@ -455,42 +517,31 @@ footer{border-top:1px solid var(--line); padding-block:24px; font-size:.84rem; c
   <div class="chapter-head">
     <span class="eyebrow">Phần 5</span>
     <h2>Bản đồ khuôn mặt</h2>
-    <p class="lede">Khác với cơ ở tay chân, đa số cơ biểu cảm bám thẳng vào da. Mỗi lần co cơ là một lần kéo da, nên lặp lại lâu năm thành nếp nhăn động. Vì vậy face yoga làm hai việc ngược nhau: <strong>thả lỏng</strong> cơ gây nếp và <strong>tăng cường</strong> cơ nâng đỡ. Nghiên cứu đo cơ năm 2025 cho kết quả đúng theo hai hướng này.<sup class="c" data-s="guzel"></sup></p>
+    <p class="lede">Bấm vào hình hoặc danh sách. Cơ biểu cảm bám thẳng vào da, nên face yoga làm hai việc: <strong>thả lỏng</strong> cơ gây nếp và <strong>tăng cường</strong> cơ nâng đỡ.<sup class="c" data-s="guzel"></sup></p>
   </div>
   <div class="explorer">
-    <div class="face-box">
-      <div id="face-main"></div>
-    </div>
-    <div class="side">
+    <div class="face-box"><div id="face-main"></div></div>
+    <div class="tabs-row">
       <div class="seg" role="tablist" aria-label="Lớp hiển thị" id="layer-tabs">
         <button role="tab" data-layer="muscles" aria-selected="true">Cơ</button>
-        <button role="tab" data-layer="lymph" aria-selected="false">Hạch bạch huyết</button>
-        <button role="tab" data-layer="points" aria-selected="false">Huyệt kinh điển</button>
-        <button role="tab" data-layer="zones" aria-selected="false">Linh Khu: tạng phủ</button>
+        <button role="tab" data-layer="lymph" aria-selected="false">Bạch huyết</button>
+        <button role="tab" data-layer="points" aria-selected="false">Huyệt</button>
+        <button role="tab" data-layer="zones" aria-selected="false">Linh Khu</button>
+        <button role="tab" data-layer="dc" aria-selected="false">Diện chẩn</button>
       </div>
-      <div class="legend" id="legend"></div>
-      <div class="detail" id="detail" aria-live="polite"></div>
-      <div class="itemlist" id="itemlist"></div>
+      <div class="seg small" id="color-mode" role="group" aria-label="Cách tô màu cơ">
+        <button data-mode="group" aria-selected="true">Màu theo cách tập</button>
+        <button data-mode="anat" aria-selected="false">Màu giải phẫu</button>
+      </div>
     </div>
+    <div class="legend" id="legend"></div>
+    <div class="detail" id="detail" aria-live="polite"></div>
+    <div class="itemlist" id="itemlist"></div>
   </div>
-  <div class="panel">
-    <h3>Lão hoá diễn ra theo nhiều tầng. Face yoga chạm tới tầng nào?</h3>
-    <div class="tbl-wrap"><table>
-      <thead><tr><th>Tầng</th><th>Điều xảy ra khi lão hoá</th><th>Face yoga tác động được?</th></tr></thead>
-      <tbody>
-        <tr><td><strong>Da</strong></td><td>Collagen giảm, UV phá huỷ sợi đàn hồi; sau mãn kinh mất khoảng 30% collagen trong 5 năm đầu<sup class="c" data-s="aad"></sup></td><td>Gián tiếp (tuần hoàn). Chống nắng và retinoid mới là chính<sup class="c" data-s="hughes"></sup></td></tr>
-        <tr><td><strong>Mỡ</strong></td><td>Các khoang mỡ teo và trượt xuống, má giữa xẹp</td><td>Gián tiếp: cơ dày hơn có thể bù một phần thể tích<sup class="c" data-s="alam,hwang"></sup></td></tr>
-        <tr><td><strong>Cơ</strong></td><td>Trương lực mất cân bằng: cơ gây nếp co quá mức, cơ nâng đỡ yếu</td><td><strong>Trực tiếp</strong>, là tầng có bằng chứng tốt nhất<sup class="c" data-s="guzel,hwang"></sup></td></tr>
-        <tr><td><strong>Dây chằng và SMAS</strong></td><td>Lỏng dần, mô mềm chảy xệ</td><td>Không có bằng chứng</td></tr>
-        <tr><td><strong>Xương</strong></td><td>Tiêu xương quanh ổ mắt và hàm</td><td>Không</td></tr>
-        <tr><td><strong>Dịch và bạch huyết</strong></td><td>Phù buổi sáng, bọng mắt</td><td>Có thể, qua dẫn lưu và co cơ (xem Phần 6)</td></tr>
-      </tbody>
-    </table></div>
-  </div>
+  <div class="card viz"><h3>Lão hoá diễn ra theo tầng. Face yoga chạm tới tầng nào?</h3><div id="layers-viz"></div></div>
   <div class="grid" style="gap:14px">
     <h3>Sáu bài nền tảng</h3>
     <div class="grid g3" id="exercises"></div>
-    <p class="muted" style="font-size:.82rem">Ảnh minh hoạ và giọng đọc tạo bằng AI, chỉ để tham khảo; hãy dạy theo mô tả từng bước.</p>
   </div>
 </section>
 
@@ -498,21 +549,20 @@ footer{border-top:1px solid var(--line); padding-block:24px; font-size:.84rem; c
 <section id="bach-huyet" class="chapter">
   <div class="chapter-head">
     <span class="eyebrow">Phần 6</span>
-    <h2>Hạch bạch huyết và trình tự dẫn lưu</h2>
-    <p class="lede">Vùng đầu cổ có hơn 300 hạch, và hai bên trái phải gần như không thông nhau.<sup class="c" data-s="statpearls"></sup> Bạch huyết ở mặt chảy về hạch trước tai, dưới hàm, dưới cằm, rồi xuống chuỗi hạch cổ sâu, cuối cùng đổ vào tĩnh mạch ở hõm trên xương đòn.<sup class="c" data-s="statpearls,kenhub"></sup></p>
+    <h2>Dẫn lưu bạch huyết 8 bước</h2>
+    <p class="lede">Vùng đầu cổ có hơn 300 hạch; bạch huyết mặt chảy xuống cổ rồi đổ vào tĩnh mạch ở hõm trên xương đòn.<sup class="c" data-s="statpearls,kenhub"></sup></p>
   </div>
-  <div class="grid g3">
-    <div class="card"><h4>Không có “tim” bơm</h4><p>Bạch huyết di chuyển nhờ co cơ, nhịp thở, mạch đập và vận động. Vì vậy co cơ mặt và thở bụng có cơ sở sinh lý để hỗ trợ dòng chảy. Hiệu quả riêng trên mặt thì chưa được đo trực tiếp.</p></div>
-    <div class="card"><h4>Lực rất nhẹ</h4><p>Mạch bạch huyết nông nằm ngay dưới da. Kỹ thuật Vodder dùng lực dưới khoảng 9 ounce/inch² (≈ 30 mmHg), nhịp tròn đều, chỉ đủ kéo căng da.<sup class="c" data-s="abmp_mld,vodder"></sup></p></div>
-    <div class="card"><h4>Mở cửa trước, đẩy dịch sau</h4><p>Luôn bắt đầu ở hõm thượng đòn và cổ, rồi mới làm vùng mặt; làm từ gần tới xa, hướng về hạch, kết thúc lại ở thượng đòn.</p></div>
-  </div>
+  <div class="iconrow" id="mld-rules"></div>
   <div class="mld">
-    <div class="face-box" style="position:static"><div id="face-mld"></div></div>
+    <div>
+      <div class="mld-fig"><img id="mld-img" src="img/mld_1.webp" alt=""><div class="face-box"><div id="face-mld"></div></div></div>
+      <div class="mld-cap"><h3 id="mld-title"></h3><p id="mld-desc" class="muted"></p></div>
+    </div>
     <div class="grid" style="gap:12px">
       <ol class="steps" id="steps"></ol>
-      <div class="btnrow"><button class="btn ghost" id="prev">Bước trước</button><button class="btn" id="next">Bước tiếp</button><button class="play" id="mld-play" aria-pressed="false"><span class="ic">▶</span><span class="lb">Nghe bước này</span></button></div>
-      <label class="auto" for="mld-auto"><input type="checkbox" id="mld-auto" checked> Nghe xong tự chuyển sang bước tiếp theo</label>
-      <p class="muted" style="font-size:.86rem"><strong>Không dẫn lưu khi:</strong> đang nhiễm trùng hoặc sốt; có huyết khối; suy tim mất bù; đang điều trị ung thư (cần bác sĩ cho phép); có hạch sưng cứng bất thường (cần đi khám).</p>
+      <div class="btnrow"><button class="btn ghost" id="prev">Bước trước</button><button class="btn" id="next">Bước tiếp</button><button class="play" id="mld-play" aria-pressed="false"><span class="ic">▶</span><span class="lb">Nghe bước 1</span></button></div>
+      <label class="auto" for="mld-auto"><input type="checkbox" id="mld-auto" checked> Nghe xong tự chuyển bước</label>
+      <p class="small muted"><strong>Không dẫn lưu khi:</strong> nhiễm trùng, sốt; huyết khối; suy tim chưa kiểm soát; đang điều trị ung thư (cần bác sĩ cho phép); hạch sưng cứng bất thường.</p>
     </div>
   </div>
 </section>
@@ -522,115 +572,93 @@ footer{border-top:1px solid var(--line); padding-block:24px; font-size:.84rem; c
   <div class="chapter-head">
     <span class="eyebrow">Phần 7</span>
     <h2>Tây y, Đông y, Diện chẩn</h2>
-    <p class="lede">Ba hệ thống mô tả cùng một khuôn mặt bằng ba ngôn ngữ. Nắm cả ba giúp bạn nói chuyện được với học viên, bác sĩ và thầy thuốc Đông y, đồng thời biết điều gì đã được chứng minh và điều gì là truyền thống.</p>
+    <p class="lede">Ba cách mô tả cùng một khuôn mặt. Nắm cả ba để nói chuyện được với học viên, bác sĩ và thầy thuốc Đông y.</p>
   </div>
-  <div class="tabs">
-    <div class="seg" role="tablist" aria-label="Lăng kính" id="lens-tabs">
-      <button role="tab" data-tab="tay" aria-selected="true">Tây y</button>
-      <button role="tab" data-tab="dong" aria-selected="false">Đông y</button>
-      <button role="tab" data-tab="dc" aria-selected="false">Diện chẩn</button>
-    </div>
-
-    <div class="tabpanel" data-panel="tay">
-      <div class="grid g2">
-        <div class="card"><h3>Thần kinh của khuôn mặt</h3>
-          <ul>
-            <li><strong>Dây VII (thần kinh mặt):</strong> vận động toàn bộ cơ biểu cảm, kể cả cơ bám da cổ.</li>
-            <li><strong>Dây V (tam thoa):</strong> cảm giác da mặt; nhánh V3 vận động các cơ nhai (cơ cắn, thái dương, hai bụng trước).</li>
-            <li><strong>Dây XI:</strong> cơ ức đòn chũm và cơ thang, nối mặt với cổ vai gáy.</li>
-            <li>Mặt và bàn tay chiếm diện tích rất lớn trên bản đồ vỏ não cảm giác và vận động.<sup class="c" data-s="penfield"></sup> Vì thế chạm vào mặt tạo cảm nhận mạnh hơn hẳn chạm vào lưng.</li>
-          </ul></div>
-        <div class="card"><h3>Cơ chế được đo đạc</h3>
-          <ul>
-            <li><strong>Phì đại cơ:</strong> cơ dày hơn làm má đầy hơn.<sup class="c" data-s="hwang,alam"></sup></li>
-            <li><strong>Cân bằng trương lực:</strong> cơ nông dịu lại, cơ chức năng khoẻ lên.<sup class="c" data-s="guzel"></sup></li>
-            <li><strong>Phản hồi nét mặt:</strong> biểu cảm ảnh hưởng nhỏ nhưng có thật lên cảm xúc.<sup class="c" data-s="coles"></sup></li>
-            <li><strong>Chạm chậm:</strong> vuốt ở tốc độ 1–10 cm/giây kích hoạt sợi cảm giác C-tactile, tạo cảm giác dễ chịu nhất.<sup class="c" data-s="loken"></sup> Áp dụng ngay: vuốt chậm như mật ong chảy.</li>
-          </ul></div>
+  <div class="seg" role="tablist" aria-label="Lăng kính" id="lens-tabs">
+    <button role="tab" data-tab="tay" aria-selected="true">Tây y</button>
+    <button role="tab" data-tab="dong" aria-selected="false">Đông y</button>
+    <button role="tab" data-tab="dc" aria-selected="false">Diện chẩn</button>
+  </div>
+  <div class="tabpanel" data-panel="tay">
+    <div class="diagram">
+      <div class="face-box"><div id="nerve-viz"></div></div>
+      <div class="grid" style="gap:12px">
+        <h3>Hai dây thần kinh của khuôn mặt</h3>
+        <p class="muted">Nửa trái hình: vùng cảm giác của dây V. Nửa phải: năm nhánh vận động của dây VII.</p>
+        <div class="list2">
+          <div><b>Dây V (tam thoa)</b><span>Cảm giác da mặt qua 3 nhánh; nhánh V3 còn vận động cơ nhai.</span></div>
+          <div><b>Dây VII (thần kinh mặt)</b><span>Vận động toàn bộ cơ biểu cảm, kể cả cơ bám da cổ.</span></div>
+          <div><b>Mặt “nặng ký” với não</b><span>Mặt và bàn tay chiếm vùng rất lớn trên vỏ não cảm giác.<sup class="c" data-s="penfield"></sup></span></div>
+          <div><b>Vuốt chậm</b><span>1–10 cm/giây kích hoạt sợi C-tactile, tạo cảm giác dễ chịu nhất.<sup class="c" data-s="loken"></sup></span></div>
+        </div>
+        <details class="more"><summary>Gua sha “tăng tuần hoàn 4 lần”: đọc cho đúng</summary><div class="in"><p class="small">Con số đến từ một nghiên cứu năm 2007 trên 11 người, cạo mạnh trên lưng, không nhóm chứng, không làm trên mặt.<sup class="c" data-s="guasha"></sup></p></div></details>
       </div>
-      <div class="card"><h3>Gua sha và massage: đọc số liệu cho đúng</h3><p>Con số “gua sha tăng vi tuần hoàn 4 lần” đến từ một nghiên cứu năm 2007 trên 11 người. Nghiên cứu này cạo mạnh trên lưng tới mức nổi chấm xuất huyết, không có nhóm chứng, không làm trên mặt. Nó không chứng minh cho kiểu gua sha mặt nhẹ nhàng hiện nay.<sup class="c" data-s="guasha"></sup></p></div>
     </div>
-
-    <div class="tabpanel" data-panel="dong" hidden>
-      <div class="grid g2">
-        <div class="card"><h3>Kinh lạc đi qua mặt</h3>
-          <ul>
-            <li><strong>Sáu kinh dương</strong> đều lên đầu mặt: Thủ và Túc Dương minh (Đại trường, Vị), Thủ và Túc Thái dương (Tiểu trường, Bàng quang), Thủ và Túc Thiếu dương (Tam tiêu, Đởm). Vì thế mới có câu “đầu là nơi hội của các kinh dương”.</li>
-            <li><strong>Đốc mạch và Nhâm mạch</strong> gặp nhau quanh môi.</li>
-            <li><strong>Kinh âm cũng nối lên mặt:</strong> kinh Can nối với mắt, có nhánh xuống má và vòng trong môi; kinh Tỳ nối gốc lưỡi.<sup class="c" data-s="lk10"></sup></li>
-            <li><strong>Kinh Vị</strong> đi qua đúng vùng các bài nâng má: Thừa khấp (ST1), Tứ bạch (ST2), Cự liêu (ST3), Địa thương (ST4), Giáp xa (ST6), Hạ quan (ST7).</li>
-          </ul></div>
-        <div class="card"><h3>Vì sao mặt già đi, theo Nội Kinh</h3>
-          <blockquote><span class="han">五七，陽明脈衰，面始焦，髮始墮</span>Nữ 35 tuổi, mạch Dương minh suy, mặt bắt đầu khô héo, tóc bắt đầu rụng.<cite>Tố Vấn, thiên 1 “Thượng cổ thiên chân luận”<sup class="c" data-s="sv1"></sup></cite></blockquote>
-          <p>Dương minh (Vị, Đại trường) là kinh suy đầu tiên, và cũng là kinh phủ kín vùng má. Câu này cho bạn một cầu nối dễ hiểu: bài tập vùng má trùng với đường kinh Vị.</p></div>
-      </div>
-      <div class="grid g2">
-        <div class="card"><h3>Tạng phủ hiện ra ở mặt</h3>
-          <blockquote><span class="han">心者……其華在面</span>Tâm, vẻ tươi tắn hiện ở mặt. Tỳ hiện ở môi, Phế sung ở da, Thận hiện ở tóc, Can hiện ở móng.<cite>Tố Vấn, thiên 9 “Lục tiết tạng tượng luận”<sup class="c" data-s="sv9"></sup></cite></blockquote></div>
-        <div class="card"><h3>Vọng chẩn</h3>
+  </div>
+  <div class="tabpanel" data-panel="dong" hidden>
+    <div class="diagram">
+      <div class="face-box"><div id="meridian-viz"></div></div>
+      <div class="grid" style="gap:12px">
+        <h3>Kinh lạc đi qua mặt</h3>
+        <p class="muted">Sáu kinh dương cùng Đốc mạch, Nhâm mạch đều lên mặt (sơ đồ giản lược, đối xứng hai bên). Kinh Vị phủ đúng vùng các bài nâng má.<sup class="c" data-s="lk10"></sup></p>
+        <blockquote><span class="han">十二經脈，三百六十五絡，其血氣皆上於面而走空竅</span>Mười hai kinh mạch, ba trăm sáu mươi lăm lạc, khí huyết đều dồn lên mặt.<cite>Linh Khu, thiên 4<sup class="c" data-s="lk4"></sup></cite></blockquote>
+        <blockquote><span class="han">五七，陽明脈衰，面始焦，髮始墮</span>Nữ 35 tuổi, mạch Dương minh suy, mặt bắt đầu khô, tóc bắt đầu rụng.<cite>Tố Vấn, thiên 1<sup class="c" data-s="sv1"></sup></cite></blockquote>
+        <details class="more"><summary>Tạng phủ hiện ra ở mặt và vọng chẩn</summary><div class="in">
+          <blockquote><span class="han">心者……其華在面</span>Tâm, vẻ tươi hiện ở mặt; Tỳ ở môi; Phế sung ở da; Thận ở tóc; Can ở móng.<cite>Tố Vấn, thiên 9<sup class="c" data-s="sv9"></sup></cite></blockquote>
           <blockquote><span class="han">望而知之謂之神</span>Nhìn mà biết bệnh, gọi là bậc thần.<cite>Nạn Kinh, nạn 61<sup class="c" data-s="nanjing"></sup></cite></blockquote>
-          <p>Linh Khu thiên 49 “Ngũ sắc” chia khuôn mặt thành các vùng ứng với tạng phủ và chi thể. Chọn lớp <strong>Linh Khu: tạng phủ</strong> ở Phần 5 để xem từng vùng.<sup class="c" data-s="lk49"></sup></p></div>
+          <p class="small">Bản đồ tạng phủ của Linh Khu thiên 49 có ở lớp “Linh Khu” của Bản đồ khuôn mặt.<sup class="c" data-s="lk49"></sup></p>
+        </div></details>
       </div>
     </div>
-
-    <div class="tabpanel" data-panel="dc" hidden>
-      <div class="grid g2">
-        <div class="card"><h3>Diện Chẩn – Điều khiển liệu pháp</h3>
-          <ul>
-            <li>Ông Bùi Quốc Châu tìm ra huyệt đầu tiên ngày 26/3/1980. Trong khoảng 3 năm, nhóm của ông xác định thêm hàng trăm huyệt (các tài liệu ghi khoảng 500–600) và các <strong>đồ hình phản chiếu</strong> cơ thể trên mặt.<sup class="c" data-s="lc_dc"></sup></li>
-            <li>Quan niệm cốt lõi: mỗi điểm hoặc vùng trên mặt phản chiếu một cơ quan; kích thích điểm đó giúp cơ thể tự điều chỉnh.</li>
-            <li>Dụng cụ: que dò, cây lăn, cào, búa gõ; có thể dán hoặc hơ nóng.<sup class="c" data-s="lc_dc"></sup></li>
-            <li>Lan ra quốc tế (Pháp, Canada, Brazil...). Năm 1988, Lone Sorensen (Đan Mạch) kết hợp Diện chẩn với truyền thống Nam Mỹ thành Facial Reflexology.<sup class="c" data-s="sorensen,eminence"></sup></li>
-          </ul></div>
-        <div class="card"><h3>Các bộ huyệt hay được nhắc tới</h3>
-          <p>Trích từ tài liệu phổ biến. Vị trí chính xác cần học từ giáo trình gốc và que dò, nên trang này không vẽ lên hình.</p>
-          <div class="tbl-wrap"><table>
-            <thead><tr><th>Mục đích nêu trong tài liệu</th><th>Số huyệt</th></tr></thead>
-            <tbody>
-              <tr><td>An thần, thư giãn (gõ nhẹ khoảng 200 lần)<sup class="c" data-s="eco_dc"></sup></td><td class="mono">26</td></tr>
-              <tr><td>Bộ ổn định thần kinh 1<sup class="c" data-s="eco_dc"></sup></td><td class="mono">124 · 34 · 0</td></tr>
-              <tr><td>Bộ ổn định thần kinh 2<sup class="c" data-s="eco_dc"></sup></td><td class="mono">1 · 26 · 37 · 50 · 103 · 106 · 267 · 300</td></tr>
-              <tr><td>Giảm căng thẳng, ngủ ngon<sup class="c" data-s="lc_dc2"></sup></td><td class="mono">124 · 34</td></tr>
-              <tr><td>Tiêu viêm, điều hoà dạ dày<sup class="c" data-s="lc_dc2"></sup></td><td class="mono">61 · 3 · 39 · 63</td></tr>
-            </tbody></table></div></div>
+  </div>
+  <div class="tabpanel" data-panel="dc" hidden>
+    <div class="diagram">
+      <div class="face-box"><div id="dc-viz"></div></div>
+      <div class="grid" style="gap:12px">
+        <h3>Diện Chẩn – Điều khiển liệu pháp</h3>
+        <div class="list2">
+          <div><b>Ra đời đầu thập niên 1980</b><span>Do ông Bùi Quốc Châu xây dựng.<sup class="c" data-s="lc_dc"></sup></span></div>
+          <div><b>26 huyệt mốc</b><span>Huyệt đánh số từ 0 đến 555 (không phải số nào cũng có), định vị theo trục dọc 0, A–L và trục ngang 0–XII.<sup class="c" data-s="dc_sinh,dc_official"></sup></span></div>
+          <div><b>Sinh huyệt</b><span>Cầm que dò vuông góc da, vạch từng đoạn 1–2 cm, điểm đau nhất là sinh huyệt.<sup class="c" data-s="dc_sinh"></sup></span></div>
+          <div><b>Đồ hình phản chiếu</b><span>Nhiều bản đồ cơ thể chồng lên mặt: nội tạng, cột sống trên sống mũi.<sup class="c" data-s="dc_map,dc_spine"></sup></span></div>
+        </div>
+        <p class="small muted">Hình bên: “tứ đại huyệt” 26, 19, 127, 0.<sup class="c" data-s="dc_4"></sup> Mở lớp <button class="chip" id="open-dc" style="padding:2px 10px">Diện chẩn</button> trên Bản đồ khuôn mặt để xem cả đồ hình nội tạng.</p>
+        <details class="more"><summary>Các bộ huyệt hay được nhắc tới</summary><div class="in"><div class="tbl-wrap"><table>
+          <thead><tr><th>Mục đích nêu trong tài liệu</th><th>Số huyệt</th></tr></thead><tbody>
+          <tr><td>An thần (gõ nhẹ khoảng 200 lần)<sup class="c" data-s="eco_dc"></sup></td><td class="mono">26</td></tr>
+          <tr><td>Ổn định thần kinh<sup class="c" data-s="eco_dc"></sup></td><td class="mono">124 · 34 · 0</td></tr>
+          <tr><td>Ổn định thần kinh (bộ 2)<sup class="c" data-s="eco_dc"></sup></td><td class="mono">1 · 26 · 37 · 50 · 103 · 106 · 267 · 300</td></tr>
+          <tr><td>Tiêu viêm, điều hoà dạ dày<sup class="c" data-s="lc_dc2"></sup></td><td class="mono">61 · 3 · 39 · 63</td></tr>
+        </tbody></table></div></div></details>
+        <div class="card" style="border-color:var(--rose); padding:14px"><p class="small"><strong>Dùng trong lớp face yoga:</strong> như một kỹ thuật chạm thư giãn có cấu trúc, không chẩn đoán, không hứa chữa bệnh. Phương pháp chưa được chứng minh khoa học.<sup class="c" data-s="lc_dc,sggp"></sup></p></div>
       </div>
-      <div class="card" style="border-color:var(--rose)"><h3>Dùng Diện chẩn trong lớp face yoga thế nào cho đúng</h3>
-        <ul>
-          <li>Các tài liệu y tế phổ thông ghi nhận phương pháp <strong>chưa được chứng minh trên cơ sở khoa học</strong>.<sup class="c" data-s="lc_dc"></sup></li>
-          <li>Dùng như một kỹ thuật chạm thư giãn có cấu trúc (lăn, day nhẹ), không chẩn đoán và không hứa chữa bệnh.<sup class="c" data-s="sggp"></sup></li>
-          <li>Nếu muốn dùng đúng nghĩa trị liệu, học chương trình chính thức và tìm hiểu quy định hành nghề hiện hành.</li>
-        </ul></div>
     </div>
   </div>
 
   <div class="grid" style="gap:16px">
-    <h3 style="font-size:1.5rem">Câu hỏi then chốt: vì sao tác động lên mặt lại được cho là tác động tới nội tạng?</h3>
+    <h3 style="font-size:1.45rem">Vì sao chạm vào mặt lại được cho là tác động tới nội tạng?</h3>
+    <div class="card viz"><div id="reflex-viz"></div></div>
     <div class="why">
       <div class="col">
         <h3>Đông y <span class="ev ev-trad">Truyền thống</span></h3>
-        <div class="mech"><h4>Khí huyết dồn lên mặt</h4>
-          <blockquote><span class="han">十二經脈，三百六十五絡，其血氣皆上於面而走空竅</span>Mười hai kinh mạch, ba trăm sáu mươi lăm lạc, khí huyết đều dồn lên mặt mà đi vào các khiếu.<cite>Linh Khu, thiên 4<sup class="c" data-s="lk4"></sup></cite></blockquote></div>
-        <div class="mech"><h4>Kinh lạc là đường nối</h4><p>Mỗi kinh nối một tạng phủ với một vùng bề mặt. Kích thích vùng mặt nằm trên đường kinh được cho là điều chỉnh tạng phủ của kinh đó.<sup class="c" data-s="lk10"></sup></p></div>
-        <div class="mech"><h4>Bản đồ hai chiều</h4><p>Linh Khu 49 đặt tạng phủ lên mặt để chẩn đoán (tạng bệnh thì vùng tương ứng đổi sắc). Từ đó suy ra chiều ngược lại: tác động lên vùng có thể ảnh hưởng tới tạng.<sup class="c" data-s="lk49"></sup></p></div>
+        <div class="mech"><h4>Khí huyết dồn lên mặt</h4><p>Mười hai kinh, ba trăm sáu mươi lăm lạc đều lên mặt.<sup class="c" data-s="lk4"></sup></p></div>
+        <div class="mech"><h4>Kinh lạc là đường nối</h4><p>Mỗi kinh nối một tạng phủ với một vùng bề mặt.<sup class="c" data-s="lk10"></sup></p></div>
+        <div class="mech"><h4>Bản đồ hai chiều</h4><p>Tạng bệnh thì vùng tương ứng đổi sắc (Linh Khu 49); từ đó suy ra tác động vùng có thể ảnh hưởng tạng.<sup class="c" data-s="lk49"></sup></p></div>
       </div>
       <div class="col">
         <h3>Diện chẩn <span class="ev ev-trad">Chưa kiểm chứng</span></h3>
-        <div class="mech"><h4>Mặt là màn hình phản chiếu</h4><p>Toàn thân được chiếu lên mặt qua nhiều đồ hình chồng lên nhau. Mỗi huyệt được đánh số ứng với một bộ phận.<sup class="c" data-s="lc_dc"></sup></p></div>
-        <div class="mech"><h4>Điều khiển liệu pháp</h4><p>Kích thích huyệt được coi là gửi tín hiệu để cơ thể tự điều chỉnh, giống cách điều khiển một hệ thống qua bảng điều khiển.</p></div>
-        <div class="mech"><h4>Kế thừa và mở rộng</h4><p>Ý tưởng mặt chứa cả cơ thể đã có trong Linh Khu 49. Diện chẩn tăng số điểm lên hàng trăm và đánh số chi tiết hơn nhiều.</p></div>
+        <div class="mech"><h4>Mặt là màn hình phản chiếu</h4><p>Toàn thân chiếu lên mặt qua nhiều đồ hình chồng nhau.<sup class="c" data-s="dc_map"></sup></p></div>
+        <div class="mech"><h4>Các bản đồ không trùng nhau</h4><p>Đầu mũi là Tỳ theo Linh Khu nhưng là Tim theo Diện chẩn: mỗi hệ là một quy ước riêng, không phải giải phẫu.</p></div>
       </div>
       <div class="col">
-        <h3>Tây y <span class="ev ev-mid">Có cơ chế đo được</span></h3>
-        <div class="mech"><h4>Phản xạ tam thoa–tim, phản xạ lặn <span class="ev ev-strong">Mạnh</span></h4><p>Nước lạnh lên mặt kích thích dây V, qua thân não kích hoạt dây X làm tim đập chậm. Đây là đường đi thật từ da mặt tới nội tạng.<sup class="c" data-s="tcr"></sup></p></div>
-        <div class="mech"><h4>Phản hồi nét mặt <span class="ev ev-mid">Vừa</span></h4><p>Phân tích gộp 138 nghiên cứu, hơn 11.000 người: biểu cảm làm thay đổi cảm xúc ở mức nhỏ.<sup class="c" data-s="coles"></sup> Tiêm botox vùng cau mày giảm trầm cảm trong thử nghiệm nhỏ có nhóm chứng.<sup class="c" data-s="botox"></sup></p></div>
-        <div class="mech"><h4>Chạm chậm và hệ tự chủ <span class="ev ev-mid">Vừa</span></h4><p>Vuốt chậm kích hoạt sợi C-tactile tạo cảm giác dễ chịu,<sup class="c" data-s="loken"></sup> giúp hạ stress và qua đó ảnh hưởng gián tiếp tới tiêu hoá, giấc ngủ, nhịp tim.</p></div>
-        <div class="mech"><h4>Chiều tạng → mặt <span class="ev ev-strong">Mạnh</span></h4><p>Đau quy chiếu: nhồi máu cơ tim có thể gây đau hàm, cổ.<sup class="c" data-s="aha"></sup> Thiếu máu làm da nhợt, bệnh gan gây vàng da. Đây là chỗ Tây y gặp vọng chẩn.</p></div>
-        <div class="mech"><h4>Mạc nối dài <span class="ev ev-weak">Mô hình</span></h4><p>Lý thuyết “Anatomy Trains” nối lưỡi, xương móng, cơ hoành, sàn chậu thành một chuỗi mạc. Mô hình này hữu ích để dạy, nhưng chưa phải bằng chứng.<sup class="c" data-s="myers"></sup></p></div>
+        <h3>Tây y <span class="ev ev-mid">Đo được</span></h3>
+        <div class="mech"><h4>Phản xạ tam thoa–tim <span class="ev ev-strong">Mạnh</span></h4><p>Nước lạnh lên mặt → dây V → thân não → dây X → tim đập chậm.<sup class="c" data-s="tcr"></sup></p></div>
+        <div class="mech"><h4>Phản hồi nét mặt <span class="ev ev-mid">Vừa</span></h4><p>138 nghiên cứu: biểu cảm đổi cảm xúc ở mức nhỏ.<sup class="c" data-s="coles"></sup> Botox vùng cau mày giảm trầm cảm trong thử nghiệm nhỏ.<sup class="c" data-s="botox"></sup></p></div>
+        <div class="mech"><h4>Chiều tạng → mặt <span class="ev ev-strong">Mạnh</span></h4><p>Nhồi máu cơ tim có thể gây đau hàm, cổ.<sup class="c" data-s="aha"></sup></p></div>
+        <div class="mech"><h4>Mạc nối dài <span class="ev ev-weak">Mô hình</span></h4><p>Lưỡi, xương móng, cơ hoành, sàn chậu nối thành một chuỗi mạc.<sup class="c" data-s="myers"></sup></p></div>
       </div>
     </div>
-    <div class="panel">
-      <p><strong>Kết luận để dạy:</strong> có bằng chứng rằng tác động lên mặt ảnh hưởng toàn thân qua hệ thần kinh tự chủ, cảm xúc và tuần hoàn. <strong>Chưa có bằng chứng</strong> rằng ấn một điểm cụ thể trên mặt tác động chọn lọc lên một cơ quan cụ thể. Hãy trình bày bản đồ Đông y và Diện chẩn như hệ thống truyền thống, kèm mức bằng chứng.</p>
-    </div>
+    <div class="panel"><p><strong>Kết luận để dạy:</strong> có bằng chứng tác động toàn thân qua thần kinh tự chủ, cảm xúc, tuần hoàn. <strong>Chưa có bằng chứng</strong> ấn một điểm trên mặt tác động chọn lọc lên một cơ quan.</p></div>
   </div>
 </section>
 
@@ -639,81 +667,49 @@ footer{border-top:1px solid var(--line); padding-block:24px; font-size:.84rem; c
   <div class="chapter-head">
     <span class="eyebrow">Phần 8</span>
     <h2>Chăm sóc da: từ Đông y sang Tây y</h2>
-    <p class="lede">Mỗi khái niệm Đông y dưới đây có một “người anh em” gần nghĩa trong da liễu hiện đại. Hai bên không trùng nhau hoàn toàn, nhưng đặt cạnh nhau giúp học viên hiểu vì sao nên làm từng bước.</p>
+    <p class="lede">Mỗi khái niệm Đông y có một “người anh em” gần nghĩa trong da liễu hiện đại.</p>
   </div>
-  <div class="card" style="padding:0">
-    <div class="tbl-wrap"><table>
-      <thead><tr><th>Đông y nói</th><th>Da liễu hiện đại tương ứng</th><th>Việc nên làm</th></tr></thead>
-      <tbody>
-        <tr><td><strong>Phế chủ bì mao</strong>: Phế làm chủ da và lông<sup class="c" data-s="sv9"></sup></td><td>Hàng rào bảo vệ da: lớp sừng, lipid, hệ vi sinh trên da</td><td>Rửa mặt dịu nhẹ, dưỡng ẩm có ceramide, thở mũi, giữ độ ẩm phòng</td></tr>
-        <tr><td><strong>Tỳ chủ cơ nhục</strong>, vẻ tươi hiện ở môi<sup class="c" data-s="sv9"></sup></td><td>Dinh dưỡng đạm, trương lực cơ; đường huyết cao gây đường hoá làm collagen cứng</td><td>Ăn đủ đạm, hạn chế đường, tập cơ mặt</td></tr>
-        <tr><td><strong>Tâm, vẻ tươi hiện ở mặt</strong><sup class="c" data-s="sv9"></sup></td><td>Vi tuần hoàn da và hệ thần kinh tự chủ; stress kéo dài làm da xỉn</td><td>Thở chậm, massage, ngủ đủ</td></tr>
-        <tr><td><strong>Can tàng huyết, chủ sơ tiết</strong></td><td>Căng thẳng cảm xúc làm gồng cơ hàm, cơ cau mày; rối loạn nội tiết</td><td>Thả lỏng hàm và trán, quản lý stress</td></tr>
-        <tr><td><strong>Thận tàng tinh</strong>; 35 tuổi Dương minh suy, mặt bắt đầu khô<sup class="c" data-s="sv1"></sup></td><td>Lão hoá nội tiết: sau mãn kinh, da mất khoảng 30% collagen trong 5 năm đầu<sup class="c" data-s="aad"></sup></td><td>Dưỡng ẩm, retinoid, chống nắng; khám phụ khoa và nội tiết</td></tr>
-        <tr><td><strong>Ngoại tà</strong> (phong, hàn, thử, thấp, táo, hoả) xâm nhập bì phu</td><td>Tác nhân môi trường: tia UV là nguyên nhân lão hoá ngoại sinh lớn nhất, kèm ô nhiễm, khói thuốc</td><td>Chống nắng hằng ngày: người dùng đều đặn không thấy lão hoá da tăng sau 4,5 năm<sup class="c" data-s="hughes"></sup></td></tr>
-        <tr><td><strong>Khí trệ huyết ứ</strong></td><td>Ứ dịch, phù, dẫn lưu bạch huyết kém</td><td>Dẫn lưu, vận động, kê cao đầu khi ngủ</td></tr>
-      </tbody>
-    </table></div>
-  </div>
-  <div class="grid g2">
-    <div class="card"><h3>Quy trình gợi ý cho học viên</h3>
-      <p><strong>Sáng:</strong> rửa mặt nhẹ, rồi 3 phút dẫn lưu nếu mặt phù, sau đó serum chống oxy hoá (vitamin C hoặc trà xanh), kem dưỡng, và chống nắng phổ rộng SPF 30+.</p>
-      <p><strong>Tối:</strong> tẩy trang, rửa mặt, rồi face yoga hoặc gua sha với dầu trên da sạch. Retinoid dùng 2–3 tối mỗi tuần và tăng dần; kết thúc bằng kem phục hồi (ceramide, rau má).</p>
-      <p><strong>Lưu ý:</strong> không gua sha cùng tối với retinoid hoặc AHA mạnh. Tập face yoga với tay sạch, ngoài vùng da đang mụn viêm.</p></div>
-    <div class="card"><h3>Dưỡng từ trong (điểm chung Đông–Tây)</h3>
-      <ul><li>Ngủ đủ, ngủ đều giờ.</li><li>Đủ đạm, nhiều rau, ít đường, ít rượu, không hút thuốc.</li><li>Điều hoà cảm xúc bằng thở chậm, thiền, yoga phục hồi.</li><li>Vận động toàn thân để tuần hoàn và bạch huyết chảy tốt.</li></ul></div>
-  </div>
-  <div class="grid g3" id="ingredients"></div>
+  <div class="pairs" id="pairs"></div>
+  <div class="card"><h3>Quy trình gợi ý cho học viên</h3><div class="routine" id="routine"></div><p class="small muted">Không gua sha cùng tối với retinoid hoặc AHA mạnh. Tập với tay sạch, tránh vùng mụn viêm.</p></div>
+  <div class="grid" style="gap:14px"><h3>Nguyên liệu: Đông y nói gì, khoa học nói gì</h3><div class="grid g3" id="ingredients"></div></div>
 </section>
 
 <!-- ================= 9. PHƯƠNG PHÁP KHÁC ================= -->
 <section id="phuong-phap" class="chapter">
   <div class="chapter-head">
     <span class="eyebrow">Phần 9</span>
-    <h2>Các phương pháp khác cho mặt, cổ, vai, gáy</h2>
-    <p class="lede">Đây là các kỹ thuật thường được ghép với face yoga. Cột “cần học” cho biết mức đầu tư để dạy hoặc làm an toàn.</p>
+    <h2>Phương pháp khác cho mặt, cổ, vai, gáy</h2>
+    <p class="lede">Các kỹ thuật hay được ghép với face yoga, kèm mức đầu tư để học.</p>
   </div>
-  <div class="grid g3" id="methods"></div>
+  <div class="grid g4" id="methods"></div>
+  <details class="more"><summary>3 kỹ thuật khác</summary><div class="in list2" id="methods-more"></div></details>
 </section>
 
-<!-- ================= 10. SO SÁNH ================= -->
+<!-- ================= 10. CÁC NƯỚC ================= -->
 <section id="so-sanh" class="chapter">
   <div class="chapter-head">
     <span class="eyebrow">Phần 10</span>
     <h2>Chăm sóc da khác nhau thế nào giữa các nước?</h2>
-    <p class="lede">Chọn quốc gia để đặt cạnh nhau. Dòng cuối là bài học cho giáo viên face yoga.</p>
+    <p class="lede">Mỗi thẻ có một bài học cho giáo viên face yoga.</p>
   </div>
-  <div class="chips" id="cmp-pick" role="group" aria-label="Chọn quốc gia"></div>
-  <div class="card" style="padding:0"><div class="tbl-wrap"><table class="cmp" id="cmp"></table></div></div>
+  <div class="grid g3" id="countries"></div>
+  <details class="more"><summary>So sánh chi tiết nhiều nước</summary><div class="in">
+    <div class="chips" id="cmp-pick" role="group" aria-label="Chọn quốc gia"></div>
+    <div class="tbl-wrap"><table class="cmp" id="cmp"></table></div>
+  </div></details>
 </section>
 
 <!-- ================= 11. NGƯỜI DẠY ================= -->
 <section id="nguoi-day" class="chapter">
   <div class="chapter-head">
     <span class="eyebrow">Phần 11</span>
-    <h2>Người dạy face yoga còn dạy gì nữa?</h2>
-    <p class="lede">Hầu như không ai chỉ dạy face yoga. Các giáo viên thành công đều ghép nó với yoga thân, hơi thở, massage và chăm sóc da.</p>
+    <h2>Người dạy face yoga còn dạy gì?</h2>
+    <p class="lede">Hầu như không ai chỉ dạy face yoga.</p>
   </div>
-  <div class="grid g3">
-    <div class="card"><span class="tag">Anh</span><h3>Danielle Collins</h3><p>Có văn bằng massage mặt, trị liệu thư giãn, dinh dưỡng, Hatha yoga, yoga tiền và hậu sản.<sup class="c" data-s="collins"></sup></p><p><strong>Gói:</strong> face yoga, thư giãn, dinh dưỡng, yoga bầu, sách và sản phẩm.</p></div>
-    <div class="card"><span class="tag">Nhật / Mỹ</span><h3>Fumiko Takatsu</h3><p>Bắt đầu từ tình trạng lệch cơ thể sau tai nạn.<sup class="c" data-s="takatsu"></sup></p><p><strong>Gói:</strong> face yoga, tư thế, hơi thở, đào tạo và chứng nhận giáo viên.</p></div>
-    <div class="card"><span class="tag">Mỹ</span><h3>Annelise Hagen</h3><p>Giáo viên yoga ở New York.<sup class="c" data-s="hagen,nbc"></sup></p><p><strong>Gói:</strong> yoga thân, face yoga, sách.</p></div>
-    <div class="card"><span class="tag">Việt Nam</span><h3>Nguyễn Hiếu</h3><p>CEO Zenlife Yoga, 21 khoá online. Khoá face yoga dạy cả kỹ thuật dầu dưỡng, mắt, tẩy da chết.<sup class="c" data-s="unica"></sup></p><p><strong>Gói:</strong> yoga, thiền, face yoga, chăm sóc da tự nhiên.</p></div>
-    <div class="card"><span class="tag">Việt Nam</span><h3>Ally Vân Anh và Lenka Seminova</h3><p>Chứng chỉ Face Yoga Method 2021; workshop gồm cổ, mắt, thở, tuần hoàn.<sup class="c" data-s="athas"></sup></p><p><strong>Gói:</strong> workshop tại studio yoga, face yoga kèm thở.</p></div>
-    <div class="card"><span class="tag">Brazil</span><h3>Chuyên viên âm ngữ trị liệu</h3><p>Fonoaudiologia estética: bài tập cơ mặt và cổ trong chăm sóc ban đầu.<sup class="c" data-s="brazil"></sup></p><p><strong>Gói:</strong> phục hồi vận động miệng–mặt, thẩm mỹ, nuốt và phát âm.</p></div>
-  </div>
-  <div class="panel">
-    <h3>Các mảng thường đi kèm face yoga</h3>
-    <div class="grid g4">
-      <div><h4>Yoga thân</h4><p class="muted" style="font-size:.92rem">Hatha, Yin, phục hồi, yoga bầu và sau sinh, cổ vai gáy.</p></div>
-      <div><h4>Hơi thở và thiền</h4><p class="muted" style="font-size:.92rem">Pranayama, yoga nidra, thư giãn có hướng dẫn.</p></div>
-      <div><h4>Mắt</h4><p class="muted" style="font-size:.92rem">Yoga mắt, trataka, thư giãn mắt màn hình.</p></div>
-      <div><h4>Kỹ thuật tay</h4><p class="muted" style="font-size:.92rem">Massage mặt, gua sha, Kobido, dẫn lưu, Diện chẩn, massage đầu.</p></div>
-      <div><h4>Chăm sóc da</h4><p class="muted" style="font-size:.92rem">Quy trình cơ bản, dầu dưỡng, nguyên liệu tự nhiên.</p></div>
-      <div><h4>Lối sống</h4><p class="muted" style="font-size:.92rem">Dinh dưỡng, giấc ngủ, quản lý stress.</p></div>
-      <div><h4>Sản phẩm</h4><p class="muted" style="font-size:.92rem">Dầu, đá gua sha, con lăn, sách, app.</p></div>
-      <div><h4>Đào tạo</h4><p class="muted" style="font-size:.92rem">Chứng chỉ giáo viên, khoá online, thử thách 21–28 ngày.</p></div>
-    </div>
+  <div class="grid g3" id="teachers"></div>
+  <div class="lead">
+    <figure><img src="img/t_kit.webp" alt="Minh hoạ bộ dụng cụ của giáo viên: thảm, gối, đá gua sha, dầu, sổ" loading="lazy"></figure>
+    <div class="card"><h3>Các mảng thường đi kèm</h3><div class="iconrow" id="bundles"></div></div>
   </div>
 </section>
 
@@ -722,12 +718,13 @@ footer{border-top:1px solid var(--line); padding-block:24px; font-size:.84rem; c
   <div class="chapter-head">
     <span class="eyebrow">Phần 12</span>
     <h2>Bộ công cụ cho giáo viên</h2>
-    <p class="lede">Ba công cụ dùng được ngay: sàng lọc an toàn trước buổi tập, thiết kế giáo án theo thời lượng và mục tiêu, và lộ trình 90 ngày. Tiến độ lộ trình lưu trên trình duyệt của bạn.</p>
+    <p class="lede">Sàng lọc an toàn, soạn giáo án, lộ trình 90 ngày. Tiến độ lưu trên trình duyệt của bạn.</p>
   </div>
   <div class="grid g2">
     <div class="tool" id="screen">
+      <img src="img/tool_screen.webp" alt="Minh hoạ giáo viên trao đổi với học viên trước buổi tập" loading="lazy" style="width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:10px">
       <h3>Sàng lọc an toàn</h3>
-      <p class="muted" style="font-size:.9rem">Đánh dấu những gì học viên đang có. Đây là công cụ hỗ trợ giáo viên, không phải chẩn đoán.</p>
+      <p class="small muted">Đánh dấu những gì học viên đang có. Công cụ hỗ trợ giáo viên, không phải chẩn đoán.</p>
       <div class="checks" id="screen-list"></div>
       <div class="result" id="screen-result" aria-live="polite"></div>
     </div>
@@ -739,20 +736,15 @@ footer{border-top:1px solid var(--line); padding-block:24px; font-size:.84rem; c
         <label for="b-aud">Đối tượng<select id="b-aud"><option value="general">Người mới</option><option value="office">Dân văn phòng</option><option value="meno">Tiền mãn kinh, mãn kinh</option><option value="post">Sau sinh</option><option value="senior">Người cao tuổi</option></select></label>
       </div>
       <ol class="plan" id="plan"></ol>
-      <div class="btnrow"><button class="btn ghost" id="copy-plan">Sao chép giáo án</button><span class="muted" id="copy-msg" style="font-size:.86rem; align-self:center"></span></div>
+      <div class="btnrow"><button class="btn ghost" id="copy-plan">Sao chép giáo án</button><span class="muted small" id="copy-msg"></span></div>
     </div>
   </div>
   <div class="tool">
-    <div style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; align-items:baseline">
-      <h3>Lộ trình 90 ngày</h3><span class="muted mono" id="rm-count"></span>
-    </div>
+    <div style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; align-items:baseline"><h3>Lộ trình 90 ngày</h3><span class="muted mono" id="rm-count"></span></div>
     <div class="prog"><i id="rm-bar" style="width:0"></i></div>
     <div class="months" id="roadmap"></div>
   </div>
-  <div class="tool">
-    <h3>Câu chữ khi quảng bá</h3>
-    <div class="say" id="say"></div>
-  </div>
+  <div class="tool"><h3>Câu chữ khi quảng bá</h3><div class="say" id="say"></div></div>
 </section>
 
 <!-- ================= NGUỒN ================= -->
@@ -760,369 +752,16 @@ footer{border-top:1px solid var(--line); padding-block:24px; font-size:.84rem; c
   <div class="chapter-head">
     <span class="eyebrow">Tham khảo</span>
     <h2>Nguồn</h2>
-    <p class="lede">Số trong ngoặc ở trên trang dẫn tới đây. Các trích dẫn kinh điển (Nội Kinh, Nạn Kinh, Hatha Yoga Pradipika) có thể đối chiếu bản dịch tiếng Việt ở thư viện Đông y.</p>
+    <p class="lede">Số nhỏ trên trang dẫn tới đây.</p>
   </div>
   <ol class="src" id="sources"></ol>
 </section>
 
-<footer>Tổng hợp ngày 06/10/2026 cho mục đích giáo dục. Tài liệu không thay thế tư vấn của bác sĩ, nha sĩ hay thầy thuốc y học cổ truyền.</footer>
+<footer>Tổng hợp ngày 06/10/2026 cho mục đích giáo dục. Ảnh minh hoạ và giọng đọc tạo bằng AI. Tài liệu không thay thế tư vấn của bác sĩ, nha sĩ hay thầy thuốc y học cổ truyền.</footer>
 </main>
 
 <script src="data.js"></script>
-<script>
-(() => {
-const D = window.DATA;
-const $ = (s, r = document) => r.querySelector(s);
-const $$ = (s, r = document) => [...r.querySelectorAll(s)];
-const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;' }[c]));
-const cite = keys => keys && keys.length ? `<sup class="c" data-s="${keys.join(',')}"></sup>` : '';
-const store = { get(k, d){ try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch { return d; } }, set(k, v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch {} } };
-const EV = { strong:['ev-strong','Mạnh'], mid:['ev-mid','Vừa'], weak:['ev-weak','Yếu / sơ bộ'], trad:['ev-trad','Truyền thống'] };
-const ev = k => `<span class="ev ${EV[k][0]}">${EV[k][1]}</span>`;
-
-/* ---------- vẽ khuôn mặt ---------- */
-const MIR = 'matrix(-1 0 0 1 400 0)';
-const BASE = `
-  <path class="skin" d="M200,40 C268,40 302,92 302,172 C302,236 294,284 280,322 C264,372 238,420 200,432 C162,420 136,372 120,322 C106,284 98,236 98,172 C98,92 132,40 200,40 Z"/>
-  <path class="ln" d="M150,412 C152,450 150,480 140,505 M250,412 C248,450 250,480 260,505 M140,488 C110,500 70,506 30,522 M260,488 C290,500 330,506 370,522"/>
-  <path class="ln" d="M188,516 C160,508 120,512 76,520 M212,516 C240,508 280,512 324,520"/>`;
-const FEAT = `
-  <path class="ln soft" d="M118,124 C140,84 178,72 200,74 C222,72 260,84 282,124"/>
-  <path class="ln" d="M101,200 C86,194 80,214 83,236 C86,258 94,276 106,278 M299,200 C314,194 320,214 317,236 C314,258 306,276 294,278"/>
-  <path class="ln" d="M134,172 Q160,158 188,168 M266,172 Q240,158 212,168"/>
-  <path class="ln" d="M140,200 Q162,186 184,200 Q162,212 140,200 Z M216,200 Q238,186 260,200 Q238,212 216,200 Z"/>
-  <circle class="iris" cx="162" cy="199" r="5.5"/><circle class="iris" cx="238" cy="199" r="5.5"/>
-  <path class="ln" d="M193,196 C192,230 188,256 184,274 M207,196 C208,230 212,256 216,274 M184,274 Q178,288 192,288 Q200,293 208,288 Q222,288 216,274"/>
-  <path class="ln" d="M166,330 Q184,320 200,326 Q216,320 234,330 M166,330 Q200,352 234,330"/>
-  <path class="ln soft" d="M184,284 Q170,302 170,324 M216,284 Q230,302 230,324 M186,392 Q200,398 214,392"/>`;
-const ORDER = ['platysma','trapezius','scm','digastric','frontalis','temporalis','masseter','buccinator','orbicularis_oculi','corrugator','procerus','nasalis','llsan','lls','zyg_minor','zyg_major','lao','risorius','orbicularis_oris','dao','dli','mentalis'];
-const byId = (arr, id) => arr.find(x => x.id === id);
-
-function layerMuscles(){
-  return ORDER.map(id => { const m = byId(D.muscles, id);
-    const p = `<path class="m ${m.group}" data-id="${m.id}" d="${m.d}" fill-rule="evenodd"><title>${esc(m.vn)}</title></path>`;
-    return m.mid ? p : p + `<g transform="${MIR}">${p}</g>`; }).join('');
-}
-function dots(arr, cls, r){
-  return arr.map(o => { const one = x => `<circle class="hit" data-id="${o.id}" cx="${x}" cy="${o.y}" r="${r + 7}"/><circle class="halo" data-id="${o.id}" cx="${x}" cy="${o.y}" r="${r + 5}"/><circle class="${cls}" data-id="${o.id}" cx="${x}" cy="${o.y}" r="${r}"><title>${esc(o.vn)}</title></circle>`;
-    return one(o.x) + (o.mid ? '' : one(400 - o.x)); }).join('');
-}
-function layerLymph(){
-  const f = D.flows.map(d => `<path class="flow" d="${d}" marker-end="url(#arr)"/>`).join('');
-  return `<g>${f}</g><g transform="${MIR}">${f}</g>` + dots(D.nodes, 'node', 6);
-}
-function faceSVG(layers, uid){
-  const L = { muscles: layerMuscles, lymph: layerLymph, points: () => dots(D.points, 'pt', 4.5), zones: () => dots(D.zones, 'zn', 5.5) };
-  return `<svg class="face" viewBox="0 0 400 540" role="img" aria-label="Sơ đồ khuôn mặt nhìn thẳng">
-    <defs><marker id="arr${uid}" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="var(--jade)"/></marker></defs>
-    ${BASE}
-    ${layers.map(l => `<g data-layer="${l}" ${l === layers[0] ? '' : 'hidden'}>${L[l]().replaceAll('url(#arr)', `url(#arr${uid})`)}</g>`).join('')}
-    <g pointer-events="none">${FEAT}</g>
-  </svg>`;
-}
-
-/* ---------- bản đồ khuôn mặt (Phần 5) ---------- */
-const GROUP = { relax:['Cần thả lỏng','var(--rose)'], tone:['Cần tăng cường','var(--jade)'], balance:['Cân bằng','var(--amber)'] };
-const LAYERS = {
-  muscles:{ items:D.muscles, legend:Object.values(GROUP).map(([t,c]) => `<span><i class="sw" style="background:${c}"></i>${t}</span>`).join(''),
-    groups:() => Object.entries(GROUP).map(([k,[t]]) => [t, D.muscles.filter(m => m.group === k)]),
-    detail:m => `<div style="display:flex; gap:8px; flex-wrap:wrap; align-items:center"><span class="tag" style="background:${GROUP[m.group][1]}; color:var(--surface)">${GROUP[m.group][0]}</span><span class="tag">${esc(m.nerve)}</span></div>
-      <h3>${esc(m.vn)}</h3><p class="muted" style="font-style:italic">${esc(m.en)}</p>
-      <dl><div><dt>Chức năng</dt><dd>${esc(m.act)}</dd></div><div><dt>Liên quan</dt><dd>${esc(m.issue)}${cite(m.ev)}</dd></div>
-      <div><dt>Bài tập gợi ý</dt><dd>${esc(m.yoga)}</dd></div>${m.warn ? `<div><dt>Lưu ý</dt><dd>${esc(m.warn)}</dd></div>` : ''}</dl>` },
-  lymph:{ items:D.nodes, legend:`<span><i class="sw" style="background:var(--jade); border-radius:50%"></i>Nhóm hạch</span><span><i class="sw" style="border:1.5px dashed var(--jade)"></i>Hướng dòng chảy</span>`,
-    groups:() => [['Vùng mặt', D.nodes.slice(0,6)], ['Vùng cổ', D.nodes.slice(6)]],
-    detail:n => `<span class="tag">${esc(n.en)}</span><h3>${esc(n.vn)}</h3>
-      <dl><div><dt>Nhận bạch huyết từ</dt><dd>${esc(n.from)}</dd></div><div><dt>Đổ về</dt><dd>${esc(n.to)}</dd></div><div><dt>Thao tác</dt><dd>${esc(n.how)}</dd></div></dl>
-      <p class="muted" style="font-size:.86rem">Hạch chẩm (vùng gáy) không hiện trên hình nhìn thẳng; nhận bạch huyết da đầu phía sau và đổ về hạch cổ.${cite(['statpearls','kenhub'])}</p>` },
-  points:{ items:D.points, legend:`<span><i class="sw" style="background:var(--amber); border-radius:50%"></i>Huyệt (mã WHO)</span><span>${ev('trad')}</span>`,
-    groups:() => [['Trán và mắt', D.points.slice(0,10)], ['Má, mũi, miệng', D.points.slice(10,18)], ['Tai và cổ', D.points.slice(18)]],
-    detail:p => `<span class="tag mono">${esc(p.code)}</span><h3>${esc(p.vn)}</h3>
-      <dl><div><dt>Vị trí</dt><dd>${esc(p.loc)}</dd></div><div><dt>Dùng trong chăm sóc</dt><dd>${esc(p.use)}</dd></div>${p.warn ? `<div><dt>Lưu ý</dt><dd>${esc(p.warn)}</dd></div>` : ''}</dl>
-      <p class="muted" style="font-size:.86rem">Vùng gáy (không hiện trên hình): Phong trì GB20, Phong phủ GV16, Thiên trụ BL10, Kiên tỉnh GB21. Công dụng ghi theo y học cổ truyền; trong lớp, dùng ấn day nhẹ để thư giãn.</p>` },
-  zones:{ items:D.zones, legend:`<span><i class="sw" style="background:var(--indigo); border-radius:50%"></i>Vùng theo Linh Khu 49</span><span>${ev('trad')}</span>`,
-    groups:() => [['Tạng phủ', D.zones.slice(0,13)], ['Chi thể', D.zones.slice(13)]],
-    detail:z => `<span class="tag">Linh Khu, thiên 49 “Ngũ sắc”</span><h3>${esc(z.vn)}</h3>
-      <dl><div><dt>Tương ứng</dt><dd><strong style="font-size:1.15rem; color:var(--ink)">${esc(z.org)}</strong></dd></div>
-      <div><dt>Nguyên văn</dt><dd><span style="font-size:1.1rem; font-family:'Noto Serif TC','Songti TC',serif">${esc(z.src)}</span>${cite(['lk49'])}</dd></div></dl>
-      <p class="muted" style="font-size:.86rem">Đây là bản đồ vọng chẩn: khi tạng phủ có bệnh, vùng tương ứng đổi sắc. Điểm trên hình là vị trí gần đúng để minh hoạ.</p>` }
-};
-const INTRO = {
-  muscles:'Chọn một cơ trên hình hoặc trong danh sách. Màu cho biết nên thả lỏng hay tăng cường.',
-  lymph:'Chọn một nhóm hạch. Nét đứt cho thấy hướng chảy từ mặt xuống cổ, về hõm thượng đòn.',
-  points:'Chọn một huyệt. Đây là các huyệt kinh điển hay dùng khi ấn day mặt.',
-  zones:'Chọn một vùng để xem tạng phủ hoặc chi thể tương ứng theo Linh Khu.'
-};
-$('#face-main').innerHTML = faceSVG(['muscles','lymph','points','zones'], 'm');
-const fm = $('#face-main svg');
-let layer = 'muscles', sel = null;
-function renderSide(){
-  const cfg = LAYERS[layer];
-  $('#legend').innerHTML = cfg.legend;
-  $('#itemlist').innerHTML = cfg.groups().map(([t, arr]) => `<div><h4>${t}</h4><div class="chips">${arr.map(o => `<button class="chip${o.id === sel ? ' sel' : ''}" data-id="${o.id}">${esc(o.vn)}${o.org ? ' → ' + esc(o.org) : ''}</button>`).join('')}</div></div>`).join('');
-  const item = sel && byId(cfg.items, sel);
-  $('#detail').innerHTML = item ? cfg.detail(item) : `<h3>${{muscles:'Cơ mặt và cổ',lymph:'Hạch bạch huyết',points:'Huyệt kinh điển',zones:'Bản đồ tạng phủ trên mặt'}[layer]}</h3><p class="muted">${INTRO[layer]}</p>`;
-  $$('[data-id]', fm).forEach(el => el.classList.toggle('on', el.dataset.id === sel));
-  numberCites();
-}
-function setLayer(l){
-  layer = l; sel = null;
-  $$('#layer-tabs button').forEach(b => b.setAttribute('aria-selected', b.dataset.layer === l));
-  $$('g[data-layer]', fm).forEach(g => g.toggleAttribute('hidden', g.dataset.layer !== l));
-  renderSide();
-}
-$('#layer-tabs').addEventListener('click', e => { const b = e.target.closest('button'); if (b) setLayer(b.dataset.layer); });
-fm.addEventListener('click', e => { const t = e.target.closest('[data-id]'); if (t){ sel = t.dataset.id; renderSide(); } });
-$('#itemlist').addEventListener('click', e => { const b = e.target.closest('button[data-id]'); if (b){ sel = b.dataset.id; renderSide(); } });
-
-/* ---------- bài tập ---------- */
-const EX = [
-  { img:'ex_cheek', t:'Nâng má', m:'Cơ nâng môi trên, cơ gò má', steps:['Miệng chữ O dọc, môi trên phủ kín răng.','Mỉm cười để nâng gò má lên, đầu ngón trỏ đặt nhẹ trên gò má.','Giữ 5 giây, thả chậm, lặp 10 lần.'], note:'Không nhăn trán. Bài này thuộc nhóm có trong chương trình nghiên cứu Northwestern.', s:['alam'] },
-  { img:'ex_v', t:'Chữ V', m:'Cơ vòng mắt (phần mi dưới)', steps:['Ngón giữa đặt ở đầu mày, ngón trỏ ở đuôi mày.','Nhìn lên trần, nheo mí dưới lên.','Giữ 5 giây, lặp 6 lần, kết thúc bằng nhắm mắt thư giãn 10 giây.'], note:'Ấn nhẹ, không kéo da quanh mắt.', s:[] },
-  { img:'ex_lion', t:'Sư tử (Simhasana)', m:'Toàn mặt, lưỡi, cổ trước', steps:['Hít vào bằng mũi.','Thở ra bằng miệng, há rộng, thè lưỡi dài xuống cằm, mắt nhìn lên.','Lặp 3 lần, rồi thả lỏng mặt hoàn toàn.'], note:'Xả căng sau bài tăng cường. Đau khớp thái dương hàm: há vừa phải.', s:['hyp'] },
-  { img:'ex_chin', t:'Gập cằm kháng lực', m:'Cơ hai bụng, nhóm trên móng', steps:['Nắm tay đặt dưới cằm.','Ép cằm xuống vào nắm tay, cổ giữ dài.','Giữ 5 giây, lặp 10 lần.'], note:'Cơ hai bụng có hiệu ứng thay đổi lớn nhất trong nghiên cứu 2025.', s:['guzel'] },
-  { img:'ex_jaw', t:'Thả lỏng hàm', m:'Cơ cắn, cơ thái dương', steps:['Lưỡi chạm vòm sau răng cửa, môi khép, răng tách.','Khớp ngón tay day vòng nhỏ trên cơ cắn 30 giây.','Chuyển lên thái dương, vừa day vừa thở ra dài.'], note:'Kẹt hàm, đau cấp: chuyển nha sĩ.', s:[] },
-  { img:'ex_lymph', t:'Mở cửa thượng đòn', m:'Hạch thượng đòn (terminus)', steps:['Ngón tay phẳng đặt vào hõm trên xương đòn.','Kéo da thật nhẹ vào trong và xuống.','10 lần, đầu và cuối mọi buổi dẫn lưu.'], note:'Lực chỉ đủ kéo căng da, không ấn sâu.', s:['abmp_mld'] }
-];
-$('#exercises').innerHTML = EX.map(x => `<article class="card ex"><img src="img/${x.img}.webp" alt="Minh hoạ bài ${esc(x.t)}" loading="lazy" onerror="this.remove()"><div class="body"><span class="tag">${esc(x.m)}</span><h3>${esc(x.t)}</h3><button class="play" data-audio="${x.img}" aria-pressed="false"><span class="ic">▶</span><span class="lb">Nghe hướng dẫn</span></button><ol>${x.steps.map(s => `<li>${esc(s)}</li>`).join('')}</ol><p class="muted" style="font-size:.86rem">${esc(x.note)}${cite(x.s)}</p></div></article>`).join('');
-
-/* ---------- dẫn lưu ---------- */
-$('#face-mld').innerHTML = faceSVG(['lymph'], 'd');
-const fd = $('#face-mld svg');
-let step = 0;
-$('#steps').innerHTML = D.mld.map((s, i) => `<li><button data-i="${i}"><span class="n">${i + 1}</span><span><span class="tt">${esc(s.t)}</span><span class="dd">${esc(s.d)}</span></span></button></li>`).join('');
-/* trình phát dùng chung: mỗi lúc chỉ một đoạn */
-const player = new Audio(); player.preload = 'none';
-let playingBtn = null, playingKey = null;
-const setBtn = (b, on) => { if (!b) return; b.setAttribute('aria-pressed', on); b.querySelector('.ic').textContent = on ? '❚❚' : '▶'; };
-function play(key, btn){
-  if (playingKey === key && !player.paused){ player.pause(); return; }
-  setBtn(playingBtn, false);
-  playingKey = key; playingBtn = btn;
-  player.src = `audio/${key}.mp3`;
-  player.play().then(() => setBtn(btn, true), () => { setBtn(btn, false); btn.querySelector('.lb').textContent = 'Chưa phát được'; });
-}
-player.addEventListener('pause', () => setBtn(playingBtn, false));
-player.addEventListener('play', () => setBtn(playingBtn, true));
-player.addEventListener('ended', () => {
-  setBtn(playingBtn, false);
-  if (playingKey?.startsWith('mld') && $('#mld-auto').checked && step < D.mld.length - 1){ setStep(step + 1); play(`mld${step + 1}`, $('#mld-play')); }
-});
-$('#exercises').addEventListener('click', e => { const b = e.target.closest('.play'); if (b) play(b.dataset.audio, b); });
-$('#mld-play').addEventListener('click', e => play(`mld${step + 1}`, e.currentTarget));
-
-function setStep(i){
-  step = Math.max(0, Math.min(D.mld.length - 1, i));
-  $$('#steps button').forEach((b, j) => j === step ? b.setAttribute('aria-current', 'step') : b.removeAttribute('aria-current'));
-  $$('[data-id]', fd).forEach(el => el.classList.toggle('on', D.mld[step].n.includes(el.dataset.id)));
-  $('#prev').disabled = step === 0; $('#next').textContent = step === D.mld.length - 1 ? 'Làm lại từ đầu' : 'Bước tiếp';
-  $('#mld-play .lb').textContent = `Nghe bước ${step + 1}`;
-}
-const goStep = i => { const wasPlaying = playingKey?.startsWith('mld') && !player.paused; setStep(i); if (wasPlaying) play(`mld${step + 1}`, $('#mld-play')); };
-$('#steps').addEventListener('click', e => { const b = e.target.closest('button'); if (b) goStep(+b.dataset.i); });
-$('#prev').onclick = () => goStep(step - 1);
-$('#next').onclick = () => goStep(step === D.mld.length - 1 ? 0 : step + 1);
-setStep(0);
-
-/* ---------- dòng thời gian ---------- */
-const TAGS = { all:['Tất cả','var(--ink-2)'], yoga:['Yoga','var(--jade)'], dongy:['Đông y','var(--amber)'], 'chau-a':['Nhật · Hàn','var(--indigo)'], tay:['Phương Tây','var(--muted)'], vn:['Việt Nam','var(--rose)'], khoahoc:['Khoa học','var(--good)'] };
-let tlf = 'all';
-function renderTL(){
-  $('#tl-filter').innerHTML = Object.entries(TAGS).map(([k,[t]]) => `<button class="chip" aria-pressed="${k === tlf}" data-k="${k}">${t}</button>`).join('');
-  $('#timeline').innerHTML = D.timeline.filter(e => tlf === 'all' || e.tag === tlf).map(e => `<li style="--tc:${TAGS[e.tag][1]}"><span class="yr">${esc(e.y)} · ${TAGS[e.tag][0]}</span><h4>${esc(e.t)}</h4><p>${esc(e.d)}${cite(e.s)}</p></li>`).join('');
-  numberCites();
-}
-$('#tl-filter').addEventListener('click', e => { const b = e.target.closest('button'); if (b){ tlf = b.dataset.k; renderTL(); } });
-
-/* ---------- ngách ---------- */
-const NF = { all:'Tất cả', top:'Hợp nhất (4–5 chấm)', online:'Online', b2b:'Doanh nghiệp', refer:'Cần phối hợp y tế' };
-let nf = 'all';
-const evCls = { 'Vừa':'ev-mid', 'Yếu':'ev-weak', '—':'' };
-function renderNiches(){
-  $('#niche-filter').innerHTML = Object.entries(NF).map(([k,t]) => `<button class="chip" aria-pressed="${k === nf}" data-k="${k}">${t}</button>`).join('');
-  const list = D.niches.filter(n => nf === 'all' || (nf === 'top' ? n.fit >= 4 : n.tags.includes(nf)));
-  $('#niches').innerHTML = list.map(n => `<div class="card"><h3>${esc(n.t)}</h3><div class="niche-meta"><span title="Độ hợp ${n.fit}/5">Độ hợp <span class="fit">${[1,2,3,4,5].map(i => `<i class="${i <= n.fit ? 'f' : ''}"></i>`).join('')}</span></span><span>Nhu cầu: <b style="color:var(--ink)">${n.demand}</b></span>${n.ev !== '—' ? `<span class="ev ${evCls[n.ev]}">Bằng chứng: ${n.ev}</span>` : ''}</div><p>${esc(n.d)}</p></div>`).join('');
-}
-$('#niche-filter').addEventListener('click', e => { const b = e.target.closest('button'); if (b){ nf = b.dataset.k; renderNiches(); } });
-
-/* ---------- nguyên liệu ---------- */
-const ING = [
-  { t:'Rau má', dy:'Thanh nhiệt, giải độc.', kh:'Madecassoside, asiaticoside hỗ trợ lành thương và phục hồi hàng rào da; là thành phần “cica” của K-beauty.', w:'Hiếm khi dị ứng. Là cây quen thuộc ở Việt Nam, rất dễ kể chuyện.', e:'mid' },
-  { t:'Nghệ (curcumin)', dy:'Hoạt huyết, tiêu viêm.', kh:'Kháng viêm, chống oxy hoá trong phòng thí nghiệm và nghiên cứu nhỏ.', w:'Nhuộm vàng da và vải; có người bị kích ứng.', e:'weak' },
-  { t:'Trà xanh (EGCG)', dy:'Thanh nhiệt.', kh:'Chống oxy hoá, hỗ trợ bảo vệ khi ra nắng.', w:'Không thay được kem chống nắng.', e:'mid' },
-  { t:'Nhân sâm', dy:'Đại bổ nguyên khí.', kh:'Ginsenoside; một số nghiên cứu nhỏ về nếp nhăn. Nền tảng của hanbang Hàn Quốc.', w:'Bằng chứng còn hạn chế.', e:'weak' },
-  { t:'Gạo, cám gạo', dy:'Kinh nghiệm dân gian Việt Nam và Nhật Bản.', kh:'Acid ferulic, inositol: làm dịu, chống oxy hoá.', w:'Nước vo gạo để lâu dễ nhiễm khuẩn; dùng trong ngày.', e:'weak' },
-  { t:'Bạch chỉ', dy:'Trừ phong, “làm trắng” (có trong các bài mặt nạ thảo dược cổ).', kh:'Chứa furanocoumarin, chất gây cảm quang.', w:'Không dùng ban ngày; dễ bỏng nắng, sạm thêm.', e:'trad' },
-  { t:'Chanh', dy:'Mẹo dân gian trị thâm.', kh:'Acid và psoralen gây viêm da quang độc khi ra nắng.', w:'Khuyên học viên tránh đắp chanh lên mặt.', e:'trad' },
-  { t:'Retinoid', dy:'—', kh:'Bằng chứng mạnh nhất trong các hoạt chất bôi cho nếp nhăn và lão hoá do nắng.', w:'Không dùng khi mang thai; bắt đầu chậm để da quen.', e:'strong' },
-  { t:'Kem chống nắng', dy:'Tương ứng việc “tránh ngoại tà”.', kh:'Thử nghiệm ngẫu nhiên 903 người: dùng hằng ngày giúp không thấy lão hoá da tăng sau 4,5 năm.', w:'Thoa đủ lượng, thoa lại khi ra ngoài lâu.', e:'strong', s:['hughes'] }
-];
-$('#ingredients').innerHTML = ING.map(i => `<div class="card"><div style="display:flex; justify-content:space-between; gap:8px; align-items:baseline; flex-wrap:wrap"><h3>${esc(i.t)}</h3>${ev(i.e)}</div><p><strong>Đông y / dân gian:</strong> ${esc(i.dy)}</p><p><strong>Khoa học:</strong> ${esc(i.kh)}${cite(i.s)}</p><p class="muted" style="font-size:.88rem"><strong>Lưu ý:</strong> ${esc(i.w)}</p></div>`).join('');
-
-/* ---------- phương pháp khác ---------- */
-const MET = [
-  { t:'Kobido', o:'Nhật Bản, 1472', d:'Massage mặt nhịp nhanh chậm xen kẽ, hơn 40 kỹ thuật; kết hợp Anma, kinh lạc, dẫn lưu.', learn:'Cao: khoá có chứng nhận, nhiều giờ thực hành tay', e:'trad', s:['kobido'] },
-  { t:'Gua sha mặt', o:'Trung Quốc (dân gian)', d:'Cạo nhẹ bằng đá theo hướng dẫn lưu. Bằng chứng gốc là gua sha mạnh trên lưng, không phải trên mặt.', learn:'Trung bình: lực, góc đá, vệ sinh dụng cụ', e:'weak', s:['guasha'] },
-  { t:'Dẫn lưu bạch huyết thủ công', o:'Pháp, 1932 (Vodder)', d:'Lực rất nhẹ, nhịp tròn đều. Là một phần của liệu pháp giảm phù phối hợp cho phù bạch huyết; với mục đích thẩm mỹ mặt thì ít nghiên cứu.', learn:'Trung bình đến cao: hiểu chống chỉ định', e:'mid', s:['vodder','abmp_mld'] },
-  { t:'Massage trong miệng (buccal)', o:'Phổ biến qua spa châu Âu', d:'Thả lỏng cơ mút, cơ cắn từ bên trong khoang miệng.', learn:'Cao: găng tay, vệ sinh, đồng thuận rõ ràng', e:'weak', s:[] },
-  { t:'Mukha Abhyanga và gậy Kansa', o:'Ấn Độ (Ayurveda)', d:'Massage mặt bằng dầu ấm, tác động các điểm marma.', learn:'Trung bình', e:'trad', s:[] },
-  { t:'Diện chẩn', o:'Việt Nam, 1980', d:'Que dò, cây lăn trên huyệt và đồ hình phản chiếu.', learn:'Cao nếu dùng để trị liệu; chú ý quy định hành nghề', e:'trad', s:['lc_dc','sggp'] },
-  { t:'Facial Reflexology', o:'Đan Mạch, 1988 (Sorensen)', d:'Kết hợp Diện chẩn với truyền thống Nam Mỹ và giải phẫu học.', learn:'Trung bình', e:'trad', s:['sorensen'] },
-  { t:'Giác hơi mặt', o:'Đông Á', d:'Cốc silicon nhỏ di chuyển trên da để kéo giãn mô.', learn:'Trung bình. Tránh khi có giãn mao mạch, rosacea, đang dùng thuốc chống đông', e:'weak', s:[] },
-  { t:'Thả lỏng mạc cổ vai', o:'Vật lý trị liệu', d:'Thả lỏng cơ ức đòn chũm, cơ thang, cơ dưới chẩm; liên quan tư thế đầu đưa ra trước.', learn:'Gần với yoga phục hồi', e:'mid', s:[] },
-  { t:'Chỉnh tư thế đầu', o:'Cơ sinh học', d:'Mô hình ước tính: cúi đầu 15° làm cổ chịu khoảng 12 kg, cúi 60° khoảng 27 kg.', learn:'Thấp: đã có sẵn trong yoga phục hồi', e:'weak', s:['hansraj'] },
-  { t:'Yoga mắt, quy tắc 20-20-20', o:'Nhãn khoa và yoga', d:'Cứ 20 phút nhìn xa 20 feet (khoảng 6 m) trong 20 giây; chớp mắt chủ động, trataka nhẹ.', learn:'Thấp', e:'mid', s:[] },
-  { t:'Thiết bị vi dòng, LED', o:'Công nghệ làm đẹp', d:'Phân khúc tăng nhanh, đáng hiểu để tư vấn học viên.', learn:'Thấp nếu chỉ tư vấn; theo hướng dẫn nhà sản xuất', e:'weak', s:['accio'] },
-  { t:'Cạo gió, gội đầu dưỡng sinh', o:'Việt Nam', d:'Thói quen quen thuộc, là cầu nối văn hoá khi giới thiệu chạm mặt, đầu, cổ.', learn:'Thấp đến trung bình', e:'trad', s:[] }
-];
-$('#methods').innerHTML = MET.map(m => `<div class="card"><div style="display:flex; justify-content:space-between; gap:8px; align-items:baseline; flex-wrap:wrap"><h3>${esc(m.t)}</h3>${ev(m.e)}</div><span class="muted" style="font-size:.84rem">${esc(m.o)}</span><p>${esc(m.d)}${cite(m.s)}</p><p style="font-size:.88rem"><strong style="color:var(--ink)">Cần học:</strong> ${esc(m.learn)}</p></div>`).join('');
-
-/* ---------- so sánh quốc gia ---------- */
-const ROWS = [['phil','Triết lý'],['ritual','Nghi thức'],['ingr','Nguyên liệu'],['hand','Kỹ thuật tay, dụng cụ'],['trend','Xu hướng'],['lesson','Bài học cho bạn']];
-let picked = new Set(store.get('fy-cmp', ['Nhật Bản','Hàn Quốc','Trung Quốc','Việt Nam']));
-function renderCmp(){
-  $('#cmp-pick').innerHTML = D.countries.map(c => `<button class="chip" aria-pressed="${picked.has(c.c)}" data-c="${esc(c.c)}">${esc(c.c)}</button>`).join('');
-  const cols = D.countries.filter(c => picked.has(c.c));
-  $('#cmp').innerHTML = cols.length ? `<thead><tr><th></th>${cols.map(c => `<th scope="col" style="color:var(--ink); font-size:.86rem">${esc(c.c)}${cite(c.s)}</th>`).join('')}</tr></thead><tbody>${ROWS.map(([k,t]) => `<tr><th scope="row">${t}</th>${cols.map(c => `<td${k === 'lesson' ? ' style="color:var(--ink); background:var(--jade-soft)"' : ''}>${esc(c[k])}</td>`).join('')}</tr>`).join('')}</tbody>` : `<tbody><tr><td>Chọn ít nhất một quốc gia ở trên.</td></tr></tbody>`;
-  numberCites();
-}
-$('#cmp-pick').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; const c = b.dataset.c; picked.has(c) ? picked.delete(c) : picked.add(c); store.set('fy-cmp', [...picked]); renderCmp(); });
-
-/* ---------- sàng lọc ---------- */
-const SCR = [
-  ['stop','Méo miệng, yếu nửa mặt hoặc nói khó xuất hiện đột ngột','Nghi đột quỵ: gọi 115 ngay, không tập.'],
-  ['stop','Đau hàm, cổ, ngực hoặc cánh tay kèm khó thở, vã mồ hôi','Nghi tim mạch: gọi 115 ngay.'],
-  ['stop','Hạch ở cổ hoặc dưới hàm sưng cứng, không đau, kéo dài trên 2 tuần','Cần đi khám trước khi tập dẫn lưu.'],
-  ['stop','Đang điều trị ung thư vùng đầu cổ hoặc vừa nạo hạch','Cần bác sĩ và chuyên viên phù bạch huyết cho phép.'],
-  ['stop','Nhiễm trùng da, herpes môi đang bùng phát, sốt','Hoãn buổi tập mặt; chỉ tập thở.'],
-  ['stop','Huyết khối tĩnh mạch hoặc suy tim chưa kiểm soát','Không dẫn lưu bạch huyết.'],
-  ['adj','Tiêm botox, filler, căng chỉ trong 2 tuần gần đây','Tránh day ấn vùng đã tiêm; hỏi bác sĩ thẩm mỹ khi nào tập lại.'],
-  ['adj','Mụn viêm, rosacea, giãn mao mạch','Bỏ gua sha, giác hơi, chà xát; chỉ tập cơ không chạm.'],
-  ['adj','Đau khớp thái dương hàm, kẹt hàm, há miệng lệch','Không há miệng hết cỡ, không kháng lực hàm; nên gặp nha sĩ.'],
-  ['adj','Thoái hoá hoặc thoát vị đĩa đệm cổ, chóng mặt khi ngửa cổ','Giới hạn biên độ ngửa, tập ngồi có tựa.'],
-  ['adj','Đang mang thai','Tư thế ngồi; theo truyền thống tránh ấn mạnh Kiên tỉnh (GB21) và Hợp cốc (LI4).'],
-  ['adj','Đang dùng thuốc chống đông','Gua sha rất nhẹ hoặc bỏ; tránh để lại vết.'],
-  ['adj','Vừa dùng retinoid, peel, laser','Da nhạy cảm: không chà xát, không dầu nóng.'],
-  ['adj','Liệt mặt (Bell) đang hồi phục','Phối hợp bác sĩ hoặc vật lý trị liệu; tránh bài co cơ mạnh ở giai đoạn sớm.']
-];
-$('#screen-list').innerHTML = `<div class="grp">Dừng lại, chuyển chuyên gia</div>` + SCR.map(([lv, t], i) => (i === 6 ? `<div class="grp">Điều chỉnh buổi tập</div>` : '') + `<label for="sc${i}"><input type="checkbox" id="sc${i}" data-i="${i}"><span>${esc(t)}</span></label>`).join('');
-function renderScreen(){
-  const on = $$('#screen-list input:checked').map(x => SCR[+x.dataset.i]);
-  const stop = on.filter(x => x[0] === 'stop'), adj = on.filter(x => x[0] === 'adj');
-  const r = $('#screen-result');
-  if (stop.length){ r.className = 'result stop'; r.innerHTML = `<span class="st">■ Chưa tập, chuyển chuyên gia</span><ul>${[...stop, ...adj].map(x => `<li>${esc(x[2])}</li>`).join('')}</ul>`; }
-  else if (adj.length){ r.className = 'result adj'; r.innerHTML = `<span class="st">▲ Tập được, cần điều chỉnh</span><ul>${adj.map(x => `<li>${esc(x[2])}</li>`).join('')}</ul>`; }
-  else { r.className = 'result ok'; r.innerHTML = `<span class="st">● Không thấy dấu hiệu cần lưu ý</span><p style="font-size:.92rem">Vẫn hỏi lại cảm giác của học viên trong và sau buổi tập.</p>`; }
-}
-$('#screen-list').addEventListener('change', renderScreen); renderScreen();
-
-/* ---------- thiết kế buổi tập ---------- */
-const PLAN = { 15:{breath:2,neck:2,drain:2,warm:1,main:5,massage:0,rest:3}, 30:{breath:3,neck:5,drain:4,warm:2,main:10,massage:3,rest:3}, 45:{breath:5,neck:7,drain:6,warm:3,main:15,massage:5,rest:4}, 60:{breath:5,neck:10,drain:8,warm:4,main:20,massage:8,rest:5} };
-const GOALS = {
-  lift:{ n:'Nâng cơ má và đường hàm', main:['Nâng má (chữ O, cười): 5 giây × 10','Cười ngậm môi nâng khoé: 10 giây × 6','Chữ V cho mí dưới: 5 giây × 6','Mặt cá: 5 giây × 8','Gập cằm kháng lực: 5 giây × 10','Sư tử để xả căng: 3 lần'] },
-  depuff:{ n:'Giảm bọng, dẫn lưu', main:['Dẫn lưu đủ 8 bước, làm chậm','Sư tử: 3 hơi thở','Ép lưỡi lên vòm rồi nuốt chậm: 5 lần','Ngón áp út vòng quanh ổ mắt rất nhẹ: 5 vòng','Kết thúc ở hõm thượng đòn: 10 lần'] },
-  jaw:{ n:'Thả lỏng hàm, ngủ ngon', main:['Tư thế nghỉ hàm (lưỡi, môi, răng): 1 phút','Day cơ cắn và cơ thái dương: 2 phút','Há miệng có kiểm soát, lưỡi chạm vòm: 6 lần','Sư tử: 3 lần','Thở 4 nhịp vào, 8 nhịp ra: 6 vòng'] },
-  neck:{ n:'Cổ vai gáy văn phòng', main:['Gập cằm nằm ngửa: 5 giây × 10','Kéo giãn cơ ức đòn chũm: 5 nhịp thở mỗi bên','Lăn vai 8 lần, khép bả vai 8 lần','Nhìn chéo lên, đẩy môi dưới (cơ bám da cổ): 8 lần','Tư thế cá có gối đỡ: 2–3 phút'] }
-};
-const AUD = {
-  general:'', office:'Thêm yoga mắt 20-20-20 vào phần khởi động; nhắc chỉnh màn hình ngang tầm mắt.',
-  meno:'Da mỏng và khô hơn: dùng lực nhẹ hơn, thêm dầu dưỡng. Thêm thở chậm giúp dịu bốc hoả.',
-  post:'Tập ngồi có tựa, không nằm sấp. Tăng thời lượng phần cổ vai do bế con. Có tiền sử huyết áp cao thai kỳ: cần bác sĩ cho phép.',
-  senior:'Ngồi ghế, biên độ cổ nhỏ, không ngửa cổ tối đa. Có răng giả: bỏ bài kháng lực hàm mạnh.'
-};
-function renderPlan(){
-  const dur = $('#b-dur').value, g = GOALS[$('#b-goal').value], a = $('#b-aud').value, p = PLAN[dur];
-  const blocks = [
-    ['breath','Đến với hơi thở','Thở bụng, thở ra dài gấp đôi hít vào. Quét căng thẳng: trán, mày, hàm, lưỡi.' + (a === 'office' ? ' Thêm 20-20-20 cho mắt.' : '')],
-    ['neck','Cổ vai gáy','Lăn vai, nghiêng tai về vai, xoay cổ biên độ nhỏ, gập cằm.'],
-    ['drain','Dẫn lưu bạch huyết','Thượng đòn, cổ, quanh tai, dưới hàm, má, mắt, trán (xem Phần 6).'],
-    ['warm','Làm ấm mặt','Xoa ấm lòng bàn tay, áp lên mặt 3 nhịp thở, vỗ nhẹ bằng đầu ngón tay.'],
-    ['main', g.n, ''],
-    ['massage','Massage hoặc gua sha nhẹ có dầu','Từ trong ra ngoài, từ dưới lên trên, kết thúc vuốt về cổ.' + (a === 'meno' ? ' Lực nhẹ hơn bình thường.' : '')],
-    ['rest','Thư giãn','Nằm phục hồi, thả lỏng mặt theo từng vùng (yoga nidra ngắn). Hỏi cảm nhận của học viên.']
-  ].filter(b => p[b[0]] > 0);
-  $('#plan').innerHTML = blocks.map(([k, t, d]) => `<li><span class="min">${p[k]} phút</span><div><b>${esc(t)}</b>${k === 'main' ? `<ul>${g.main.map(x => `<li>${esc(x)}</li>`).join('')}</ul>` : `<p>${esc(d)}</p>`}</div></li>`).join('') + (AUD[a] ? `<li><span class="min">Lưu ý</span><div><p>${esc(AUD[a])}</p></div></li>` : '');
-  renderPlan.text = `Giáo án ${dur} phút: ${g.n}\n` + blocks.map(([k, t, d]) => `- ${p[k]}': ${t}${k === 'main' ? '\n' + g.main.map(x => '    • ' + x).join('\n') : ': ' + d}`).join('\n') + (AUD[a] ? `\nLưu ý: ${AUD[a]}` : '');
-}
-['#b-dur','#b-goal','#b-aud'].forEach(s => $(s).addEventListener('change', renderPlan)); renderPlan();
-$('#copy-plan').addEventListener('click', () => {
-  const msg = $('#copy-msg');
-  navigator.clipboard.writeText(renderPlan.text).then(() => { msg.textContent = 'Đã sao chép.'; }, () => {
-    const r = document.createRange(); r.selectNodeContents($('#plan')); const s = getSelection(); s.removeAllRanges(); s.addRange(r); msg.textContent = 'Đã bôi đen giáo án, nhấn Ctrl/⌘ + C để sao chép.'; });
-});
-
-/* ---------- lộ trình 90 ngày ---------- */
-const RM = [
-  ['Tháng 1 · Nền tảng', ['Học thuộc 22 cơ và 9 nhóm hạch trên Bản đồ khuôn mặt','Tự tập 20 phút mỗi ngày; chụp ảnh chuẩn hoá (cùng ánh sáng, góc) ở tuần 0, 4, 8, 12','Đọc 4 nghiên cứu: Alam 2018, Hwang 2018, Güzel 2025, Van Borsel 2014','Soạn phiếu sàng lọc an toàn và mẫu đồng thuận cho học viên']],
-  ['Tháng 2 · Kỹ năng', ['Chọn một chương trình có chứng chỉ (Face Yoga Method, Danielle Collins hoặc khoá trong nước)','Học thêm một kỹ thuật tay có thực hành: dẫn lưu bạch huyết mặt hoặc gua sha','Thiết kế 3 giáo án 15, 30, 45 phút bằng công cụ ở trên','Dạy thử miễn phí cho 5–10 học viên cũ và thu phản hồi']],
-  ['Tháng 3 · Ra mắt', ['Chọn một ngách chính (ví dụ face yoga kết hợp cổ vai gáy văn phòng)','Mở workshop 90 phút (tham chiếu: 500.000đ cho 1,5 giờ ở Sài Gòn năm 2022)','Viết nội dung quảng bá theo bảng câu chữ, có trích nguồn','Kết nối một nha sĩ hoặc bác sĩ da liễu để giới thiệu hai chiều']]
-];
-let done = new Set(store.get('fy-roadmap', []));
-function renderRM(){
-  const total = RM.reduce((s, [, a]) => s + a.length, 0);
-  $('#roadmap').innerHTML = RM.map(([t, arr], mi) => `<div class="checks"><div class="grp" style="margin-top:0">${t}</div>${arr.map((x, i) => { const id = `rm${mi}-${i}`; return `<label for="${id}"><input type="checkbox" id="${id}" data-k="${id}" ${done.has(id) ? 'checked' : ''}><span>${esc(x)}</span></label>`; }).join('')}</div>`).join('');
-  $('#rm-count').textContent = `${done.size}/${total} việc`;
-  $('#rm-bar').style.width = (done.size / total * 100) + '%';
-}
-$('#roadmap').addEventListener('change', e => { const k = e.target.dataset.k; if (!k) return; e.target.checked ? done.add(k) : done.delete(k); store.set('fy-roadmap', [...done]); renderRM(); });
-renderRM();
-
-/* ---------- câu chữ ---------- */
-const SAY = [
-  ['“Trẻ hoá 10 tuổi sau 7 ngày”','“Một nghiên cứu nhỏ: sau 20 tuần tập đều, bác sĩ đánh giá trẻ hơn khoảng 3 tuổi.”'],
-  ['“Thay thế hoàn toàn Botox, filler”','“Lựa chọn không xâm lấn; có thể dùng song song theo tư vấn của bác sĩ.”'],
-  ['“Ấn huyệt này chữa đau dạ dày, mất ngủ”','“Theo Đông y, vùng này liên hệ với...; trong lớp, mình dùng để thư giãn.”'],
-  ['“Thải độc qua hạch bạch huyết”','“Hỗ trợ dòng chảy bạch huyết, giảm cảm giác phù buổi sáng.”'],
-  ['“Nhìn mặt biết bệnh”','“Nếu thấy dấu hiệu bất thường, bạn nên đi khám.”'],
-  ['“Đốt mỡ mặt, gọt hàm”','“Thả lỏng cơ hàm, cải thiện tư thế cổ; đường viền có thể rõ hơn.”']
-];
-$('#say').innerHTML = `<div class="h no">Tránh nói</div><div class="h yes">Nên nói</div>` + SAY.map(([a, b]) => `<div class="no">${esc(a)}</div><div class="yes">${esc(b)}</div>`).join('');
-
-/* ---------- biểu đồ Việt Nam ---------- */
-(function chart(){
-  const W = 560, H = 260, l = 54, r = 22, t = 22, b = 34;
-  const x = yr => l + (yr - 2000) / 25 * (W - l - r), y = v => H - b - v / 10000 * (H - t - b);
-  const pts = [[2000, 100, '≈ 100'], [2020, 5000, '5.000'], [2025, 10000, '≈ 10.000 (dự kiến)']];
-  const grid = [0, 2500, 5000, 7500, 10000].map(v => `<line class="gridl" x1="${l}" x2="${W - r}" y1="${y(v)}" y2="${y(v)}"/><text class="ax" x="${l - 8}" y="${y(v) + 4}" text-anchor="end">${v.toLocaleString('vi-VN')}</text>`).join('');
-  const xt = [2000, 2005, 2010, 2015, 2020, 2025].map(v => `<text class="ax" x="${x(v)}" y="${H - b + 18}" text-anchor="middle">${v}</text>`).join('');
-  const [p0, p1, p2] = pts.map(([a, v]) => [x(a), y(v)]);
-  $('#vn-chart-svg').innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Số thẩm mỹ viện tăng từ khoảng 100 năm 2000 lên 5.000 năm 2020, dự kiến khoảng 10.000 năm 2025">
-    ${grid}${xt}
-    <path d="M${p0} L${p1}" fill="none" stroke="var(--jade)" stroke-width="2" stroke-linecap="round"/>
-    <path d="M${p1} L${p2}" fill="none" stroke="var(--jade)" stroke-width="2" stroke-dasharray="5 5" stroke-linecap="round"/>
-    ${pts.map(([a, v, lab], i) => `<circle cx="${x(a)}" cy="${y(v)}" r="5" fill="${i === 2 ? 'var(--surface)' : 'var(--jade)'}" stroke="var(--jade)" stroke-width="2"/>
-      <text class="ax" style="fill:var(--ink); font-size:12px" x="${x(a) + (i === 2 ? -10 : 10)}" y="${y(v) - 10}" text-anchor="${i === 2 ? 'end' : 'start'}">${lab}</text>
-      <circle class="hov" cx="${x(a)}" cy="${y(v)}" r="16" fill="transparent" data-tip="${a}${i === 2 ? ' (dự kiến)' : ''}: ${lab.replace(' (dự kiến)', '')} cơ sở"/>`).join('')}
-  </svg>`;
-  const box = $('#vn-chart'), tip = document.createElement('div'); tip.className = 'tip'; tip.hidden = true; box.appendChild(tip);
-  box.addEventListener('pointerover', e => { const c = e.target.closest('.hov'); if (!c) return; const br = box.getBoundingClientRect(), cr = c.getBoundingClientRect(); tip.textContent = c.dataset.tip; tip.style.left = (cr.left + cr.width / 2 - br.left) + 'px'; tip.style.top = (cr.top - br.top) + 'px'; tip.hidden = false; });
-  box.addEventListener('pointerout', e => { if (e.target.closest('.hov')) tip.hidden = true; });
-})();
-
-/* ---------- tabs lăng kính ---------- */
-$('#lens-tabs').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return;
-  $$('#lens-tabs button').forEach(x => x.setAttribute('aria-selected', x === b));
-  $$('[data-panel]').forEach(p => p.hidden = p.dataset.panel !== b.dataset.tab); });
-
-/* ---------- trích dẫn: đánh số theo thứ tự xuất hiện ---------- */
-const keys = Object.keys(D.sources); let order = [];
-function numberCites(){
-  const seen = [];
-  $$('sup.c[data-s]').forEach(el => el.dataset.s.split(',').forEach(k => { if (D.sources[k] && !seen.includes(k)) seen.push(k); }));
-  keys.forEach(k => { if (!seen.includes(k)) seen.push(k); });
-  if (seen.join() !== order.join()){ order = seen;
-    $('#sources').innerHTML = order.map(k => { const s = D.sources[k]; return `<li id="src-${k}">${esc(s.t)}${s.u ? ` <a href="${s.u}" target="_blank" rel="noopener">${esc(s.u.replace(/^https?:\/\//, '').slice(0, 70))}${s.u.length > 78 ? '…' : ''}</a>` : ''}</li>`; }).join(''); }
-  $$('sup.c[data-s]').forEach(el => { el.innerHTML = el.dataset.s.split(',').filter(k => D.sources[k]).map(k => `<a href="#src-${k}" aria-label="Nguồn ${order.indexOf(k) + 1}">${order.indexOf(k) + 1}</a>`).join(','); });
-}
-
-renderTL(); renderNiches(); renderCmp(); setLayer('muscles'); numberCites();
-
-/* ---------- mục lục theo vị trí cuộn ---------- */
-const links = $$('#toc a'), secs = links.map(a => $(a.getAttribute('href')));
-const io = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting){ const i = secs.indexOf(en.target); links.forEach((a, j) => a.classList.toggle('on', j === i)); const nav = $('#toc'), a = links[i]; nav.scrollTo({ left: a.offsetLeft - nav.clientWidth / 2 + a.offsetWidth / 2, behavior: 'smooth' }); } }), { rootMargin:'-45% 0px -50% 0px' });
-secs.forEach(s => s && io.observe(s));
-})();
-</script>
+<script src="app.js"></script>
 
 </body>
 </html>
